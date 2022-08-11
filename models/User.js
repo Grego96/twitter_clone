@@ -11,7 +11,7 @@ const userSchema = new Schema({
   tweets: [
     {
       type: Schema.Types.ObjectId,
-      ref: "Tweets",
+      ref: "Tweet",
     },
   ],
   followers: [
