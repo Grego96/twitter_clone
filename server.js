@@ -4,7 +4,8 @@ const express = require("express");
 const routes = require("./routes");
 const APP_PORT = process.env.APP_PORT || 3000;
 const app = express();
-// const User = require("./models/User")
+const mongoose = require("mongoose");
+const Tweet = require("./models/Tweet");
 
 require("./config/mongoConfig"); // mongoose connect <-----
 
@@ -15,13 +16,10 @@ app.set("view engine", "ejs");
 
 routes(app);
 
-// const newUser = new User({
-//   firstname: "Grego",
-//   lastname: "Hunkeler",
-//   username: "Linternita",
-//   email: "gregoryhunkeler@gmail.com"
-// })
-// newUser.save()
+const tweet = new Tweet({
+  text: "prueba Tweet",
+});
+tweet.save();
 
 app.listen(APP_PORT, () => {
   console.log(`\n[Express] Servidor corriendo en el puerto ${APP_PORT}.`);
