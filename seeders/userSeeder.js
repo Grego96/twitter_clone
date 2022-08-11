@@ -1,29 +1,30 @@
+const _ = require("lodash");
+// const Tweet = require("../models/Tweet");
 const User = require("../models/User");
-const mongoose = require("mongoose");
-
-//create your array. i inserted only 1 object here
-const newUsers = [];
-for (let i = 0; i < process.env.SEEDER_TOTAL_USERS; i++) {
-  const user = new User({
-    firstname: "Alina",
-    lastname: "Gabriels",
-    username: "AGabriels",
-    email: "alinagabriels@cucusu.com",
-    description: "hola me llamo Alina y estoy feliz",
-    profileImage: "imagen de perfil",
-    tweets: [],
-  });
-  newUsers.push(user);
-}
-//connect mongoose
 require("../config/mongoConfig");
-//save your data. this is an async operation
-//after you make sure you seeded all the products, disconnect automatically
-newUsers.map(async (user, index) => {
-  await user.save((err, result) => {
-    if (index === newUsers.length - 1) {
-      console.log("DONE!");
-      mongoose.disconnect();
-    }
-  });
-});
+
+// async function getRandomUser() {
+//   const number = _.random(0, process.env.SEEDER_TOTAL_USERS - 1);
+//   return await User.findOne().skip(number);
+// }
+
+module.exports = async () => {
+  const newUsers = [];
+  for (let i = 0; i < process.env.SEEDER_TOTAL_USERS; i++) {
+    const user = new User({
+      firstname: "Alina",
+      lastname: "Gabriels",
+      username: "AGabriels",
+      email: "alinagabriels@cucusu.com",
+      description: "hola me llamo Alina y estoy feliz",
+      profileImage: "imagen de perfil",
+      tweets: [],
+    });
+    newUsers.push(user);
+  }
+
+  for (let i = 0; i < newUsers.length; i++) {
+    newUsers[i].save();
+  }
+  console.log("USERS DONE!");
+};
