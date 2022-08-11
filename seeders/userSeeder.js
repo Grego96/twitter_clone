@@ -11,6 +11,7 @@ for (let i = 0; i < 20; i++) {
     email: "alinagabriels@cucusu.com",
     description: "hola me llamo Alina y estoy feliz",
     profileImage: "imagen de perfil",
+    tweets: [],
   });
   newUsers.push(user);
 }
