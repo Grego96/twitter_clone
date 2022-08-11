@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 
 //create your array. i inserted only 1 object here
 const newUsers = [];
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < process.env.SEEDER_TOTAL_USERS; i++) {
   const user = new User({
     firstname: "Alina",
     lastname: "Gabriels",
