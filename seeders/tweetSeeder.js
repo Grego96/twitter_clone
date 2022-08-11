@@ -14,7 +14,6 @@ module.exports = async () => {
   for (let i = 0; i < process.env.SEEDER_TOTAL_TWEETS; i++) {
     const tweet = new Tweet({
       text: "lorem ipsum",
-      user: await getRandomUser(),
     });
     tweets.push(tweet);
   }
