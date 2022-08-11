@@ -4,13 +4,9 @@ const express = require("express");
 const routes = require("./routes");
 const APP_PORT = process.env.APP_PORT || 3000;
 const app = express();
-const mongoose = require("mongoose");
-const User = require("./models/users");
+// const User = require("./models/User")
 
-mongoose.connect(process.env.DB_CONNECTION_STRING);
-mongoose.connection
-  .once("open", () => console.log("¡Conexión con la base de datos establecida!"))
-  .on("error", (error) => console.log(error));
+require("./config/mongoConfig"); // mongoose connect <-----
 
 app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
@@ -19,12 +15,13 @@ app.set("view engine", "ejs");
 
 routes(app);
 
-const user = new User({
-  firstname: "Alina",
-  lastname: "Gabriels",
-  username: "Alina Gabriels",
-});
-user.save();
+// const newUser = new User({
+//   firstname: "Grego",
+//   lastname: "Hunkeler",
+//   username: "Linternita",
+//   email: "gregoryhunkeler@gmail.com"
+// })
+// newUser.save()
 
 app.listen(APP_PORT, () => {
   console.log(`\n[Express] Servidor corriendo en el puerto ${APP_PORT}.`);
