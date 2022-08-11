@@ -1,11 +1,11 @@
 const Tweet = require("../models/Tweet");
 const mongoose = require("mongoose");
-const User = require("../models/User")
+const User = require("../models/User");
 require("../config/mongoConfig");
 
 async function traerUsuarios() {
-    const user = await User.find({}, user.firstname);
-    console.log(user);
+  const user = await User.find( );
+  console.log(user);
 }
 traerUsuarios();
 
@@ -14,7 +14,7 @@ traerUsuarios();
 // for (let i = 0; i < 20; i++) {
 //   const tweet = new Tweet({
 //     text: "lorem ipsum",
-//     user: 
+//     user:
 //   });
 //   tweets.push(tweet);
 // }
