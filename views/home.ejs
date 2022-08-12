@@ -85,14 +85,14 @@
               <!-- <div class="px-3">
                 <img
                   style="width: 4rem; height: 4rem; border-radius: 50px"
-                  src="< tweet.user.profileImage %> "
+                  src="<   res.locals.user.profileImage %>  "
                   alt="profile image"
                 />
               </div> -->
               <div class="form-group">
                 <label for="text"></label>
                 <textarea
-                  style="background-color: black; color: white"
+                  style="background-color: black; color: white; border:none"
                   class="form-control"
                   id="text"
                   name="text"
@@ -113,7 +113,7 @@
             <% for( const tweet of tweets) { %>
 
 
-            <div class="col-12 d-flex">
+            <div class=" d-flex" style="width: 100%">
               <div class="px-3">
                 <img
                   style="width: 4rem; height: 4rem; border-radius: 50px"
@@ -121,7 +121,7 @@
                   alt="profile image"
                 />
               </div>
-              <div class="px-3">
+              <div class="px-3" style="width: 100%">
                 <div>
                 <a style="color: white; text-decoration: none; font-weight: bolder" href="#">
                   <%= tweet.user.username %>
@@ -129,10 +129,10 @@
                 <p><%= tweet.text %></p>
                 </div>
                 <div class="d-flex justify-content-around" >
-                  <div> <i class="fa-regular fa-comment"></i></div>
-                 <div><i class="fa-solid fa-retweet"></i></div>
-                  <div><i class="fa-regular fa-heart"></i></div>
-                  <div><i class="fa-solid fa-arrow-up-from-bracket"></i></div>
+                    <i class="fa-regular fa-comment"></i>
+                    <i class="fa-solid fa-retweet"></i>
+                    <i class="fa-regular fa-heart"></i>
+                    <i class="fa-solid fa-arrow-up-from-bracket"></i>
                 </div>
               </div>
             </div>
