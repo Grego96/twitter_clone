@@ -11,6 +11,7 @@ module.exports = async () => {
       lastname: faker.name.lastName(),
       username: faker.internet.userName(),
       email: faker.internet.email(),
+      password: await bcrypt.hash("banana", 8),
       description: faker.lorem.paragraph(),
       profileImage: faker.image.avatar(),
       tweets: [],
@@ -20,5 +21,5 @@ module.exports = async () => {
 
   console.log("USERS DONE!");
 
-  return newUsers
+  return newUsers;
 };

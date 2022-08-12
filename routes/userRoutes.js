@@ -1,33 +1,11 @@
 const express = require("express");
-const bcrypt = require("bcryptjs");
 const userRoutes = express.Router();
-const User = require("../models/User");
+const userController = require("../controllers/userController");
 
-userRoutes.get("/login", (req, res) => {
-  res.send("Home funcionando");
-});
+userRoutes.get("/login", userController.login);
 
-userRoutes.get("/register", (req, res) => {
-  res.render("register");
-});
+userRoutes.get("/register", userController.create);
 
-userRoutes.post("/register", async (req, res) => {
-  console.log(req.body);
-  const newUser = await new User({
-    firstname: req.body.firstname,
-    lastname: req.body.lastname,
-    username: req.body.user,
-    email: req.body.email,
-    password: await bcrypt.hash(req.body.password, 8),
-    profileImage: req.body.profileImage,
-  });
-  // newUser.save((error) => {
-  //   if (error) return console.log(error);
-  //   console.log("Se creó un nuevo usuario en la DB!");
-  // });
-
-  res.send("Se creó un usuario nuevo");
-  // res.redirect("/");
-});
+userRoutes.post("/register", userController.store);
 
 module.exports = userRoutes;
