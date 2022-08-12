@@ -1,6 +1,8 @@
 const _ = require("lodash");
 const User = require("../models/User");
+const bcrypt = require("bcryptjs");
 const { faker } = require("@faker-js/faker");
+
 require("../config/mongoConfig");
 
 module.exports = async () => {
