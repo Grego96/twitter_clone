@@ -1,12 +1,7 @@
 const _ = require("lodash");
 const Tweet = require("../models/Tweet");
-const User = require("../models/User");
+const { faker } = require("@faker-js/faker");
 require("../config/mongoConfig");
-
-// async function getRandomUser() {
-//   const number = _.random(0, process.env.SEEDER_TOTAL_USERS - 1);
-//   return await User.findOne().skip(number);
-// }
 
 module.exports = async () => {
   
@@ -22,5 +17,6 @@ module.exports = async () => {
     tweets[i].save();
   }
   console.log("TWEETS DONE!");
-
+ 
+  return tweets
 };
