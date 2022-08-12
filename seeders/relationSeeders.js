@@ -18,9 +18,9 @@ module.exports = async () => {
   }
 
   for (const tweet of tweets) {
-    let chosenUser = _.sample(users);
-    tweet.user = chosenUser;
-    chosenUser.tweets.push(tweet);
+    const chosenUser = _.sample(users);
+    tweet.user = chosenUser.id;
+    chosenUser.tweets.push(tweet.id);
   }
 
   User.insertMany(users);
