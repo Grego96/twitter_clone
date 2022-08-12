@@ -12,43 +12,74 @@
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="/homeStyles.css" />
   </head>
-  <body style="color: white; background-color: black">
+  <body>
     <section>
       <div class="container">
         <div class="row">
-          <div class="col-3">
+          <div class="col-3 ">
             <ul style="list-style: none">
               <li>
-                <h2><a href="/">Home</a></h2>
+                <h2>
+                  <a href="/"><i class="fa-brands fa-twitter"></i> </a>
+                </h2>
               </li>
               <li>
-                <h2><a href="#">Explore</a></h2>
+                <h2>
+                  <a href="/"></i>Home</a>
+                </h2>
               </li>
               <li>
-                <h2><a href="#">Notification</a></h2>
+                <h3>
+                  <a href="#"> <i class="fa-light fa-hashtag"></i> Explore</a>
+                </h3>
               </li>
               <li>
-                <h2><a href="#">Messages</a></h2>
+                <h3>
+                  <a href="#"> Notification</a>
+                </h3>
               </li>
               <li>
-                <h2><a href="#">Bookmarks</a></h2>
+                <h3>
+                  <a href="#"> Messages</a>
+                </h3>
               </li>
               <li>
-                <h2><a href="/profile">Profile</a></h2>
+                <h3>
+                  <a href="#"> Bookmarks</a>
+                </h3>
               </li>
               <li>
-                <h2><a href="#">More</a></h2>
+                <h3>
+                  <a href="#"> Lists</a>
+                </h3>
+              </li>
+              <li>
+                <h3>
+                  <a href="/profile"> Profile</a>
+                </h3>
+              </li>
+              <li>
+                <h2>
+                  <a href="#">More</a>
+                </h2>
               </li>
               <button
-                class="btn btn-lg"
+                class="btn btn-lg px-5"
                 style="background-color: #1a8cd8; color: white; border-radius: 50px"
               >
                 Tweet
               </button>
             </ul>
           </div>
-          <div class="col-6">
+          <div
+            class="col-6"
+            style="
+              border-right: solid rgb(152, 151, 151) 1px;
+              border-left: solid rgb(152, 151, 151) 1px;
+            "
+          >
             <h2>Home</h2>
             <form action="/" method="post">
               <!-- <div class="px-3">
@@ -59,19 +90,28 @@
                 />
               </div> -->
               <div class="form-group">
-                <label for="exampleFormControlTextarea1"></label>
+                <label for="text"></label>
                 <textarea
                   style="background-color: black; color: white"
                   class="form-control"
-                  id="tweetText"
+                  id="text"
+                  name="text"
                   rows="3"
                   maxlength="140"
                   placeholder="What's happening?"
                 ></textarea>
               </div>
+              <button
+                class="btn btn my-2"
+                type="submit"
+                style="background-color: #1a8cd8; color: white; border-radius: 50px"
+              >
+                Tweet
+              </button>
             </form>
             <hr />
             <% for( const tweet of tweets) { %>
+
 
             <div class="col-12 d-flex">
               <div class="px-3">
@@ -82,11 +122,18 @@
                 />
               </div>
               <div class="px-3">
+                <div>
                 <a style="color: white; text-decoration: none; font-weight: bolder" href="#">
                   <%= tweet.user.username %>
                 </a>
                 <p><%= tweet.text %></p>
-                <div><i class="fa-thin fa-comment"></i> <i class="fa-solid fa-retweet"></i></div>
+                </div>
+                <div class="d-flex justify-content-around" >
+                  <div> <i class="fa-regular fa-comment"></i></div>
+                 <div><i class="fa-solid fa-retweet"></i></div>
+                  <div><i class="fa-regular fa-heart"></i></div>
+                  <div><i class="fa-solid fa-arrow-up-from-bracket"></i></div>
+                </div>
               </div>
             </div>
             <hr />
@@ -94,14 +141,24 @@
           </div>
           <div class="col-3">
             <input
-              class="bg-dark my-4 px-4 py-2"
-              style="border-radius: 50px"
+              class="bg-dark my-4 px-4 py-2 "
+              style="border-radius: 50px; "
               disabled
               type="text"
               placeholder="Search Twitter"
             />
             <div class="card p-2 bg-dark">
               <h2>Trends for you</h2>
+              <hr />
+              <p>Lorem ipsum dolor sit amet.</p>
+              <hr />
+              <p>Lorem ipsum dolor sit amet.</p>
+              <hr />
+              <p>Lorem ipsum dolor sit amet.</p>
+              <hr />
+              <p>Lorem ipsum dolor sit amet.</p>
+              <hr />
+              <p>Lorem ipsum dolor sit amet.</p>
               <hr />
               <p>Lorem ipsum dolor sit amet.</p>
               <hr />

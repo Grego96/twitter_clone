@@ -29,7 +29,8 @@ passport.serializeUser(function (user, done) {
 });
 
 passport.deserializeUser(async function (id, done) {
-  const user = await User.findById(id).pupulate("followers", "following", "tweets")
+  const user = await User.findById(id)
+    .pupulate("followers", "following", "tweets")
     .then((user) => {
       done(null, user);
     })

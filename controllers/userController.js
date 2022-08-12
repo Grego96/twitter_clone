@@ -25,8 +25,7 @@ const userControllers = {
       console.log("Se creó un nuevo usuario en la DB!");
     });
 
-    res.send("Se creó un usuario nuevo");
-    // res.redirect("/");
+    res.redirect("/");
   },
 };
 
