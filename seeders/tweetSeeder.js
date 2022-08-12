@@ -11,8 +11,6 @@ module.exports = async () => {
     });
     tweets.push(tweet);
   }
-
-  console.log("TWEETS DONE!");
  
   return tweets
 };

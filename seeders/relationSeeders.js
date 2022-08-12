@@ -12,7 +12,7 @@ module.exports = async () => {
 
     for (const chosenUser of chosenUsers) {
       user.followers.push(chosenUser.id);
-      chosenUser.following.push(user.id);
+      chosenUser.followings.push(user.id);
     }
   }
 
@@ -25,5 +25,10 @@ module.exports = async () => {
   User.insertMany(users);
   Tweet.insertMany(tweets);
 
-  console.log("TODO DONE!");
+  console.log(`
+                ______________________________________
+                ________                      ________
+  ヾ(=｀ω´=)ノ” ________Users and Tweets DONE!________ ヾ(=｀ω´=)ノ”
+                ______________________________________
+  `);
 };
