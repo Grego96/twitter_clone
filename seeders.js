@@ -1,8 +1,6 @@
 async function runAllSeeders() {
-
-  await require("./seeders/fallowAndTweetsSeeders")()
-
+  require("mongoose").connection.dropDatabase();
+  await require("./seeders/relationSeeders")();
 }
 
 runAllSeeders();
-

@@ -15,13 +15,12 @@ module.exports = async () => {
       chosenUsers[j].following.push(users[i].id);
     }
   }
-  console.log("FALLOWINGS AND FALLOWERS DONE!");
+  console.log("FOLLOWINGS AND FOLLOWERS DONE!");
 
   for (let i = 0; i < tweets.length; i++) {
-    let allUsers = [...users];
-    let chosenUser = _.sample(allUsers);
+    let chosenUser = _.sample(users);
     tweets[i].user = chosenUser;
-    chosenUser.tweets.push(tweets[i])
+    chosenUser.tweets.push(tweets[i]);
   }
   console.log("TWEETS OF USERS DONE!");
 
@@ -33,4 +32,6 @@ module.exports = async () => {
     tweets[i].save();
   }
   console.log("TWEETS SAVE DONE!");
+
+  console.log("TODO DONE!");
 };

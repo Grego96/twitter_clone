@@ -1,4 +1,3 @@
-const _ = require("lodash");
 const Tweet = require("../models/Tweet");
 const { faker } = require("@faker-js/faker");
 require("../config/mongoConfig");
