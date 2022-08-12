@@ -16,10 +16,6 @@ app.set("view engine", "ejs");
 
 routes(app);
 
-const tweet = new Tweet({
-  text: "prueba Tweet",
-});
-tweet.save();
 
 app.listen(APP_PORT, () => {
   console.log(`\n[Express] Servidor corriendo en el puerto ${APP_PORT}.`);

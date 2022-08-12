@@ -1,5 +1,6 @@
-// const userRoutes = require("./userRoutes");
+const userRoutes = require("./userRoutes");
 
 module.exports = (app) => {
-  // app.use(userRoutes);
+   app.use(userRoutes);
 };
+
