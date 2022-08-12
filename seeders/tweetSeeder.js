@@ -8,7 +8,7 @@ module.exports = async () => {
   const tweets = [];
   for (let i = 0; i < process.env.SEEDER_TOTAL_TWEETS; i++) {
     const tweet = new Tweet({
-      text: "lorem ipsum",
+      text: faker.lorem.paragraph()
     });
     tweets.push(tweet);
   }
