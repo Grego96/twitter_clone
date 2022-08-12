@@ -18,10 +18,5 @@ module.exports = async () => {
     newUsers.push(user);
   }
 
-  for (let i = 0; i < newUsers.length; i++) {
-    newUsers[i].save();
-  }
-  console.log("USERS DONE!");
-
   return newUsers
 };

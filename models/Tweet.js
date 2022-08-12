@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const tweetSchema = new Schema({
   text: {
     type: String,
-    maxLength: 140,
+    // maxLength: 140,
     required: true,
   },
   user: {

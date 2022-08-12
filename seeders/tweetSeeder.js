@@ -12,11 +12,6 @@ module.exports = async () => {
     });
     tweets.push(tweet);
   }
-
-  for (let i = 0; i < tweets.length; i++) {
-    tweets[i].save();
-  }
-  console.log("TWEETS DONE!");
  
   return tweets
 };
