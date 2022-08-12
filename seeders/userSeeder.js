@@ -18,5 +18,7 @@ module.exports = async () => {
     newUsers.push(user);
   }
 
+  console.log("USERS DONE!");
+
   return newUsers
 };

@@ -21,12 +21,14 @@ module.exports = async () => {
     }
   }
 
+  console.log("FALLOWINGS AND FALLOWERS DONE!");
+
   for (let i = 0; i < users.length; i++) {
     users[i].save();
   }
-  console.log("USERS DONE!");
+  console.log("USERS SAVE DONE!");
   for (let i = 0; i < tweets.length; i++) {
     tweets[i].save();
   }
-  console.log("TWEETS DONE!");
+  console.log("TWEETS SAVE DONE!");
 };
