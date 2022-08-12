@@ -1,11 +1,6 @@
 const _ = require("lodash");
 require("../config/mongoConfig");
 
-// async function getRandomUser() {
-//   const number = _.random(0, process.env.SEEDER_TOTAL_USERS - 1);
-//   return await User.findOne().skip(number);
-// }
-
 module.exports = async () => {
   const users = await require("./userSeeder")();
   const tweets = await require("./tweetSeeder")();
@@ -20,7 +15,6 @@ module.exports = async () => {
       chosenUsers[j].following.push(users[i].id);
     }
   }
-
   console.log("FALLOWINGS AND FALLOWERS DONE!");
 
   for (let i = 0; i < tweets.length; i++) {
@@ -29,7 +23,6 @@ module.exports = async () => {
     tweets[i].user = chosenUser;
     chosenUser.tweets.push(tweets[i])
   }
-
   console.log("TWEETS OF USERS DONE!");
 
   for (let i = 0; i < users.length; i++) {
