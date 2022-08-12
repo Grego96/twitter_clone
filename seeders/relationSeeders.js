@@ -1,4 +1,5 @@
 const _ = require("lodash");
+const colors = require("colors")
 const User = require("../models/User");
 const Tweet = require("../models/Tweet");
 require("../config/mongoConfig");
@@ -27,8 +28,9 @@ module.exports = async () => {
 
   console.log(`
                 ______________________________________
-                ________                      ________
-  ヾ(=｀ω´=)ノ” ________Users and Tweets DONE!________ ヾ(=｀ω´=)ノ”
+     ^   ^      ______                        ________     ^   ^
+  ヾ(=0ω0=)ノ”  ______ Users and Tweets DONE! ________  ヾ(=0ω0=)ノ”
                 ______________________________________
-  `);
+                
+  ` .green);
 };

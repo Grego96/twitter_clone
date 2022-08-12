@@ -12,6 +12,12 @@ require("./config/mongoConfig"); // mongoose connect <-----
 app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
 
+app.use(function (req, res, next) {
+  res.locals.user = req.user;
+  res.locals.url = req.url;
+  next();
+});
+
 app.set("view engine", "ejs");
 
 routes(app);
