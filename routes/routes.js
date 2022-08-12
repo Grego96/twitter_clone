@@ -18,4 +18,6 @@ routes.get("/", async (req, res) => {
   res.render("home", { tweets });
 });
 
+// routes.post("/")
+
 module.exports = routes;

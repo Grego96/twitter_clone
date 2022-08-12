@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
+    <script src="https://kit.fontawesome.com/5f5e2fe79d.js" crossorigin="anonymous"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -12,17 +13,106 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
+  <body style="color: white; background-color: black">
     <section>
       <div class="container">
         <div class="row">
-          <% for( const tweet of tweets) { %>
-
-          <div class="col-12">
-            <a href="#"> <%= tweet.user.username %> </a>
-            <p><%= tweet.text %></p>
+          <div class="col-3">
+            <ul style="list-style: none">
+              <li>
+                <h2><a href="/">Home</a></h2>
+              </li>
+              <li>
+                <h2><a href="#">Explore</a></h2>
+              </li>
+              <li>
+                <h2><a href="#">Notification</a></h2>
+              </li>
+              <li>
+                <h2><a href="#">Messages</a></h2>
+              </li>
+              <li>
+                <h2><a href="#">Bookmarks</a></h2>
+              </li>
+              <li>
+                <h2><a href="/profile">Profile</a></h2>
+              </li>
+              <li>
+                <h2><a href="#">More</a></h2>
+              </li>
+              <button
+                class="btn btn-lg"
+                style="background-color: #1a8cd8; color: white; border-radius: 50px"
+              >
+                Tweet
+              </button>
+            </ul>
           </div>
-          <% } %>
+          <div class="col-6">
+            <h2>Home</h2>
+            <form action="/" method="post">
+              <!-- <div class="px-3">
+                <img
+                  style="width: 4rem; height: 4rem; border-radius: 50px"
+                  src="< tweet.user.profileImage %> "
+                  alt="profile image"
+                />
+              </div> -->
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1"></label>
+                <textarea
+                  style="background-color: black; color: white"
+                  class="form-control"
+                  id="tweetText"
+                  rows="3"
+                  maxlength="140"
+                  placeholder="What's happening?"
+                ></textarea>
+              </div>
+            </form>
+            <hr />
+            <% for( const tweet of tweets) { %>
+
+            <div class="col-12 d-flex">
+              <div class="px-3">
+                <img
+                  style="width: 4rem; height: 4rem; border-radius: 50px"
+                  src="<%= tweet.user.profileImage %> "
+                  alt="profile image"
+                />
+              </div>
+              <div class="px-3">
+                <a style="color: white; text-decoration: none; font-weight: bolder" href="#">
+                  <%= tweet.user.username %>
+                </a>
+                <p><%= tweet.text %></p>
+                <div><i class="fa-thin fa-comment"></i> <i class="fa-solid fa-retweet"></i></div>
+              </div>
+            </div>
+            <hr />
+            <% } %>
+          </div>
+          <div class="col-3">
+            <input
+              class="bg-dark my-4 px-4 py-2"
+              style="border-radius: 50px"
+              disabled
+              type="text"
+              placeholder="Search Twitter"
+            />
+            <div class="card p-2 bg-dark">
+              <h2>Trends for you</h2>
+              <hr />
+              <p>Lorem ipsum dolor sit amet.</p>
+              <hr />
+              <p>Lorem ipsum dolor sit amet.</p>
+              <hr />
+              <p>Lorem ipsum dolor sit amet.</p>
+              <hr />
+              <p>Lorem ipsum dolor sit amet.</p>
+              <hr />
+            </div>
+          </div>
         </div>
       </div>
     </section>
