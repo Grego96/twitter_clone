@@ -23,6 +23,15 @@ module.exports = async () => {
 
   console.log("FALLOWINGS AND FALLOWERS DONE!");
 
+  for (let i = 0; i < tweets.length; i++) {
+    let allUsers = [...users];
+    let chosenUser = _.sample(allUsers);
+    tweets[i].user = chosenUser;
+    chosenUser.tweets.push(tweets[i])
+  }
+
+  console.log("TWEETS OF USERS DONE!");
+
   for (let i = 0; i < users.length; i++) {
     users[i].save();
   }
