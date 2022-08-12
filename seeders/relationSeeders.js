@@ -1,37 +1,29 @@
 const _ = require("lodash");
+const User = require("../models/User");
+const Tweet = require("../models/Tweet");
 require("../config/mongoConfig");
 
 module.exports = async () => {
   const users = await require("./userSeeder")();
   const tweets = await require("./tweetSeeder")();
 
-  for (let i = 0; i < users.length; i++) {
-    let allUsers = [...users];
-    allUsers.slice(i, 1);
-    let chosenUsers = _.sampleSize(allUsers, _.random(0, 5));
+  for (const user of users) {
+    let chosenUsers = _.sampleSize(users, _.random(0, 5)).filter((u) => u.id !== user.id);
 
-    for (let j = 0; j < chosenUsers.length; j++) {
-      users[i].followers.push(chosenUsers[j].id);
-      chosenUsers[j].following.push(users[i].id);
+    for (const chosenUser of chosenUsers) {
+      user.followers.push(chosenUser.id);
+      chosenUser.following.push(user.id);
     }
   }
-  console.log("FOLLOWINGS AND FOLLOWERS DONE!");
 
-  for (let i = 0; i < tweets.length; i++) {
+  for (const tweet of tweets) {
     let chosenUser = _.sample(users);
-    tweets[i].user = chosenUser;
-    chosenUser.tweets.push(tweets[i]);
+    tweet.user = chosenUser;
+    chosenUser.tweets.push(tweet);
   }
-  console.log("TWEETS OF USERS DONE!");
 
-  for (let i = 0; i < users.length; i++) {
-    users[i].save();
-  }
-  console.log("USERS SAVE DONE!");
-  for (let i = 0; i < tweets.length; i++) {
-    tweets[i].save();
-  }
-  console.log("TWEETS SAVE DONE!");
+  User.insertMany(users);
+  Tweet.insertMany(tweets);
 
   console.log("TODO DONE!");
 };
