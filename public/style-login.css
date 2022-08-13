@@ -1,83 +1,191 @@
-/* Este es el CSS del proyecto */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
-    margin: 0;
-    box-sizing: border-box;
-    background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  background-color: #050505;
 }
 
-.grid-container {
-    display: grid;
-    grid-template-columns:45% 55%;    
+.container {
+  height: 120vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.grid-item {
-    display: flex;
+.main {
+  display: flex;
+  height: 130%;
 }
 
-img {
-    background-image: fluid;
-    width: 100%;   
-   
-  }
-
-.login-background {
-    position: relative;
-    width: 100%;
+.img {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.twitter-small-bird {    
-    color: rgb(214, 217, 219);  
-    width: 6%;
-    margin-left: 2.5rem;
-    position: relative;
-    
+.img {
+  background-image: url("../public/img/login_left.png");
+  height: 110%;
+}
+
+.login {
+  width: 100%;
+}
+.twitter-small-bird {
+  color: rgb(214, 217, 219);
+  width: 20%;
+  margin-left: 2.5rem;
+}
+
+.twitter-small-bird svg {
+  width: 30%;
 }
 
 .main-title {
-    display: block;
-    color: white;
-    ;
-    margin-left: 2.5rem;
-    font-size: 5rem;
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1.2px;
+  display: block;
+  color: white;
+  margin-left: 2.5rem;
+  margin-bottom: 3rem;
+  font-size: 4.3rem;
 }
 
 .subtitle {
-    color: white;
-    margin-top: 3rem;
-    margin-left: 2.5rem;
-    font-size: 2.5rem;
+  font-family: TwitterChirpExtendedHeavy, Verdana, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+  display: block;
+  color: white;
+  margin-left: 2.5rem;
+  margin-bottom: 2rem;
+  font-size: 2.1rem;
 }
 
-.div-register-button {
-padding-top: 15px;
+.div-nav-footer {
+  margin-top: 1rem;
+  display: inline-block;
+  text-align: center;
 }
 
-.register-button {
-    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    padding: 10px 100px;
-    background-color: rgb(0, 0, 0);
-    border: 1px solid white;
-    color: #1D9BF0;
-    font-weight: bold;
-    font-size: 1rem;
-    border-radius: 25px;
-    margin-top: 50px;
-    margin-left: 2.5rem;
-    text-decoration: none;
-    transition: .4s;
+.div-google-register-buttom {
+  margin-bottom: 30px;
 }
 
-.register-button:hover {
-background-color: #03111a;
+.google-register-buttom {
+  background-color: white;
+  color: #0f1419;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  padding: 10px 4.8rem;
+  border-radius: 25px;
+  margin-left: 2.5rem;
+  text-decoration: none;
+  transition: 0.4s;
 }
 
-.grid-container2 {
-    display: grid;
-    grid-template-rows:62%; 
+.div-apple-register-buttom {
+  margin: 20px;
 }
 
-.nav-footer {
-    padding: .6rem;
-    font-size: .8rem;
+.apple-register-buttom {
+  background-color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #0f1419;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 25px;
+  padding: 10px 5.2rem;
+  margin-left: 1.2rem;
+  transition: 0.4s;
+}
+
+.o {
+  margin-left: 2.5rem;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.line {
+  display: inline-flex;
+  width: 9.2rem;
+  color: grey;
+}
+
+.div-cellphone-register-buttom {
+  margin-top: 1.5rem;
+}
+
+.cellphone-register-buttom {
+  background-color: #1a8cd8;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: white;
+  vertical-align: center;
+  padding: 0.6rem 1.4rem 0.7rem;
+  border-radius: 25px;
+  margin-left: 2.5rem;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.cellphone-register-buttom:hover {
+  color: #1d9bf0;
+}
+
+.div-termns-conditions {
+  margin-top: 1.3rem;
+  margin-bottom: 4rem;
+  margin-left: 3.6rem;
+  font-size: 0.7rem;
+}
+
+.termns-conditions {
+  color: white;
+}
+
+.label-login {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1.1rem;
+  color: white;
+  margin-left: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.login-button {
+  font-family: Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  padding: 10px 6rem;
+  background-color: rgb(0, 0, 0);
+  border: 1px solid white;
+  color: #1d9bf0;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 25px;
+  margin-top: 30px;
+  margin-left: 2.5rem;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.login-button:hover {
+  background-color: #03111a;
+}
+
+.items-footer {
+  justify-content: space-around;
+  padding: 2rem 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.div-nav-footer {
+  margin-top: 6rem;
 }
