@@ -1,7 +1,9 @@
 body {
   color: white;
   background-color: black;
+  margin-top: 20px;
 }
+
 a {
   color: white;
 }
@@ -15,12 +17,32 @@ a:visited {
 a:hover {
   color: white;
 }
+li {
+  width: max-content;
+  padding: 0 10px;
+  margin: 30px 0;
+}
 li:hover {
   color: white;
-  background-color: gray;
-  width: max-content;
+  background-color: rgb(99, 99, 99);
+
   height: fit-content;
   border-radius: 100px;
-  padding: 0 12px 0 6px;
-  margin-left: 5px;
+}
+
+.trends {
+  padding: 20px;
+  background-color: #16181c;
+  border-radius: 20px;
+}
+.tt {
+  color: #424853;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+.loremTT {
+  margin: 0;
+  font-size: 0.8;
+  font-weight: bold;
 }

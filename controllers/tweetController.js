@@ -10,10 +10,9 @@ const tweetControllers = {
   },
 
   store: async (req, res) => {
-    console.log(req.body);
     const newTweet = await new Tweet({
       text: req.body.text,
-      user: "62f68dffb0e580d5b1226405",
+      user: "62f6fc729864c505c907bf5f",
     });
     newTweet.save((error) => {
       if (error) return console.log(error);

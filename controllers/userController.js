@@ -15,7 +15,7 @@ const userControllers = {
     const newUser = await new User({
       firstname: req.body.firstname,
       lastname: req.body.lastname,
-      username: req.body.user,
+      username: req.body.username,
       email: req.body.email,
       password: await bcrypt.hash(req.body.password, 8),
       profileImage: req.body.profileImage,
