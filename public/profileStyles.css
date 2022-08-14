@@ -20,20 +20,50 @@ a:visited {
 a:hover {
   color: white;
 }
-li {
+li h4,
+li h2 {
   width: max-content;
   padding: 2px 20px;
   margin: 20px 0;
 }
-li:hover {
+li h4:hover,
+li h2:hover {
   color: white;
   background-color: rgb(56, 56, 56);
   height: fit-content;
   border-radius: 100px;
 }
+.profileList {
+  margin-top: 10px;
+  width: max-content;
+  padding: 15px 20px;
+  color: #424853;
+}
 
-#home {
-  margin-top: 20px;
+.profileList:hover {
+  color: white;
+  background-color: rgb(56, 56, 56);
+  color: #424853;
+}
+#selected {
+  color: white;
+  text-decoration: underline #1a8cd8 4px;
+}
+#profileUser {
+  margin: 20px 0 0 0;
+}
+
+.profileImage {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50px;
+}
+
+#headProfileImage {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 100px;
+  margin: 10px 0;
 }
 
 .trends {
