@@ -18,7 +18,7 @@ routes.get("/", tweetController.index);
 routes.post("/", tweetController.store);
 
 routes.post("/like", async (req, res) => {
-  console.log(req.body.like);
+  // console.log(req.body.like);
   //   const newLike = await new Tweet({
   //     like: req.body.like,
   //   });
@@ -30,7 +30,7 @@ routes.get("/profile/:id", async (req, res) => {
     .populate("tweets")
     .sort([["createdAt", "descending"]]);
 
-  console.log(userTweets);
+  // console.log(userTweets);
   //   const userTweets = await Tweet.find()
   //     .sort([["createdAt", "descending"]])
   //     .populate("user");

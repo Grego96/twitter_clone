@@ -23,8 +23,8 @@
             <!-- ---------------------- SIDEBAR --------------------- -->
           <div class="col-3 ">
             <ul >
-              <li class="rounde">
-                <h2>
+              <li >
+                <h2 class="rounded">
                   <a href="/"><i class="fa-brands fa-twitter"></i> </a>
                 </h2>
               </li>
@@ -80,21 +80,35 @@
           <!-- ---------------- TWEET ZONE START ---------------- -->
           <div class="col-6" id="parallelLines">
             <div class="d-flex profileUser align-items-center">
-              <div class=" mx-4 rounde"> <a href="/"> <i class="fa-solid fa-arrow-left"></i> </a></div> 
+              <div class="rounded"> <a href="/"> <i class="fa-solid fa-arrow-left"></i> </a></div> 
               <div >
                 <h4 >  <%= userTweets.firstname + " " + userTweets.lastname  %></h4>
                <h6 class="tt" " > <%= userTweets.tweets.length %>  Tweets</h6>
               </div>
             </div>
-            <img
+            <div>
+              <div id="headerPic">
+                
+              </div>
+
+              <div>
+                <img
                  id="headProfileImage"
                   src="<%= userTweets.profileImage %> "
                   alt="profile image"
                 />
+              </div>
+
+              <button class="btn" id="edit-btn"> Edit profile</button>
+
+
+
+            </div>
+            
                <h4 class="profileUser"><strong>  <%= userTweets.firstname + " " + userTweets.lastname  %></strong></h4>
                <h6 class="tt"> @<%=  userTweets.username%> </h6>
                <p class="my-4"><%= userTweets.description %> </p>
-               <h6 id="born"> ø Born August 01, 1962 | Joined September 1998</h6>
+               <h6 id="born">  Born August 01, 1962 | Joined September 1998</h6>
                 <h6><%= userTweets.followings.length%> 
                   <text class="tt"> Following</text>  
                   <%= userTweets.followers.length%> 
