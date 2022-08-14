@@ -87,10 +87,19 @@
               </div>
             </div>
             <img
-                 id="headProfileImage"
-                  src="<%= userTweets.profileImage %> "
-                  alt="profile image"
-                />
+                <% if(userTweets.profileImage.includes("http")) {%>
+                  <img
+                  id="headProfileImage"
+                    src="<%=userTweets.profileImage%>"
+                    alt="profile image"
+                  />
+                  <% } else{%>
+                  <img
+                  id="headProfileImage"
+                    src="/img/<%= userTweets.profileImage%>"
+                    alt="profile image"
+                  />
+                  <% } %>
                <h4 class="profileUser"><strong>  <%= userTweets.firstname + " " + userTweets.lastname  %></strong></h4>
                <h6 class="tt"> @<%=  userTweets.username%> </h6>
                <p class="my-4"><%= userTweets.description %> </p>
@@ -112,14 +121,24 @@
             <hr class="mt-0"/>
 
             <% for( const tweet of userTweets.tweets) { %>
-
+            
             <div class=" d-flex" style="width: 100%">
               <div class="px-3">
-                <img
-                  class="profileImage"
-                  src="<%= userTweets.profileImage %> "
-                  alt="profile image"
-                />
+                <% if(userTweets.profileImage.includes("http")) {%>
+                  <img
+                  style="width: 4rem; height: 4rem; border-radius: 50px"
+                    src="<%=userTweets.profileImage%>"
+                    class="profileImage"
+                    alt="profile image"
+                  />
+                  <% } else{%>
+                  <img
+                  style="width: 4rem; height: 4rem; border-radius: 50px"
+                    src="/img/<%= userTweets.profileImage%>"
+                    class="profileImage"
+                    alt="profile image"
+                  />
+                  <% } %>
               </div>
               <div class="px-3" style="width: 100%">
                 <div>

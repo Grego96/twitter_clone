@@ -79,7 +79,7 @@
 
           <!-- ---------------- TWEET ZONE START ---------------- -->
           <div class="col-6" id="parallelLines">
-            <h2 id="home">Home</h2>
+            <h2 id="home">Home de <%= user.username %> </h2>
             <form action="/" method="post">
               <div class="form-group">
                  <label for="text"></label>
@@ -103,11 +103,21 @@
 
             <div class=" d-flex" style="width: 100%">
               <div class="px-3">
-                <img
+                <% if(tweet.user.profileImage.includes("http")) {%>
+                  <img
                   style="width: 4rem; height: 4rem; border-radius: 50px"
-                  src="<%= tweet.user.profileImage %> "
-                  alt="profile image"
-                />
+                    src="<%=tweet.user.profileImage%>"
+                    class="card-img-top img-fluid img-fixed-size img-main"
+                    alt="profile image"
+                  />
+                  <% } else{%>
+                  <img
+                  style="width: 4rem; height: 4rem; border-radius: 50px"
+                    src="/img/<%= tweet.user.profileImage%>"
+                    class="card-img-top img-fluid img-fixed-size img-main"
+                    alt="profile image"
+                  />
+                  <% } %>
               </div>
               <div class="px-3" style="width: 100%">
                 <div>

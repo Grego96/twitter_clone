@@ -6,12 +6,11 @@ const User = require("../models/User");
 passport.use(
   new LocalStrategy(
     {
-      usernameField: "email",
+      usernameField: "user",
       passwordField: "password",
     },
-    async (email, password, done) => {
-      const user = await User.findOne({ email: email });
-
+    async (username, password, done) => {
+      const user = await User.findOne({ username: username });
       if (!user) {
         return done(null, false, { message: "Incorrect email or password." });
       }
@@ -30,7 +29,7 @@ passport.serializeUser(function (user, done) {
 
 passport.deserializeUser(async function (id, done) {
   const user = await User.findById(id)
-    .pupulate("followers", "following", "tweets")
+    .populate("followers")
     .then((user) => {
       done(null, user);
     })

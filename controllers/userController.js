@@ -1,5 +1,8 @@
 const User = require("../models/User");
 const bcrypt = require("bcryptjs");
+const formidable = require("formidable");
+const path = require("path");
+/////////
 
 const userControllers = {
   login: (req, res) => {
@@ -11,20 +14,27 @@ const userControllers = {
   },
 
   store: async (req, res) => {
-    const newUser = await new User({
-      firstname: req.body.firstname,
-      lastname: req.body.lastname,
-      username: req.body.username,
-      email: req.body.email,
-      password: await bcrypt.hash(req.body.password, 8),
-      profileImage: req.body.profileImage,
+    const form = formidable({
+      multiples: true,
+      uploadDir: path.join(__dirname, "../public/img"),
+      keepExtensions: true,
     });
-    newUser.save((error) => {
-      if (error) return console.log(error);
-      console.log("Se creó un nuevo usuario en la DB!");
+    form.parse(req, async (error, fields, files) => {
+      const newUser = new User({
+        firstname: fields.firstname,
+        lastname: fields.lastname,
+        email: fields.email,
+        username: fields.username,
+        password: await bcrypt.hash(fields.password, 8),
+        profileImage: files.profileImage.newFilename,
+      });
+      newUser.save((error) => {
+        if (error) return console.log(error);
+        console.log("Se creó un nuevo usuario en la DB!");
+      });
+      res.redirect("/");
+      
     });
-
-    res.redirect("/");
   },
 };
 
