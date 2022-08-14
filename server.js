@@ -6,8 +6,14 @@ const APP_PORT = process.env.APP_PORT || 3000;
 const app = express();
 const mongoose = require("mongoose");
 const Tweet = require("./models/Tweet");
+const passport = require("passport");
+const session = require("express-session");
 
 require("./config/mongoConfig"); // mongoose connect <-----
+require("./config/passportConfig")
+
+app.use(session({ secret: "AlgúnTextoSuperSecreto", resave: false, saveUninitialized: false }));
+app.use(passport.session());
 
 app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));

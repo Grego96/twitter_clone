@@ -11,7 +11,6 @@ const userControllers = {
   },
 
   store: async (req, res) => {
-    console.log(req.body);
     const newUser = await new User({
       firstname: req.body.firstname,
       lastname: req.body.lastname,

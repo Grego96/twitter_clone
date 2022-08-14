@@ -6,42 +6,139 @@
 
 .contenedor {
   height: 100vh;
-  /* display: flex;
-  flex-direction: column; */
+  display: flex;
+  flex-direction: column;
 }
 
-.div-image {  
+.div-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("../public/img/login_left.png");
+  background-image: url("./img/login_left.png");
 }
 
 .login-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  min-width: 55%;
+  padding: 20px;
+}
+
+.login-info h1 {
+  font-size: 4rem;
+  font-weight:bolder;
+  font-family: TwitterChirpExtendedHeavy, Verdana, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, Helvetica, Arial, sans-serif;
+}
+
+.login-info h3 {
+ font-weight: bolder; 
+ margin-top: 35px;
+}
+
+.register_buttons {
+  margin-top: 15px;
+  max-width: 45%;
+}
+
+.register {
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  padding: 7px 0px;
+  border: 1px solid rgb(187, 187, 187);
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.4s;
+}
+
+.register_google {
+  color: #3c3f42;
+}
+.register_apple {
+  color: #0f1419;
+  font-weight: 600;
+}
+.register_num {
+  background-color: #1a8cd8;
+  font-weight: 600;
+  color: white;
+}
+
+.register_buttons .o {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 0 20px;
+}
+
+.terminos {
+  font-size: 0.8rem;
+}
+
+.o {
+  display: flex;
+  justify-content: center;
+}
+
+.iniciar-sesion {
+  margin-top: 60px;
+  width: 45%;
+}
+
+.elements{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.elements h4 {
+  font-weight: bold;
 }
 
 
+.botones_modal {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.input-email {
+  padding: 14px 5px;
+}
 
+.siguiente {
+  width: 70%;
+}
 
+.siguiente .input-email {
+  width: 100%;
+}
 
+.siguiente p a {
+  color: #1a8cd8;
+}
 
+.siguiente-btn {
+  margin-top: 25px;
+  color: white;
+  background-color: black;
+  font-weight: bold;
+}
 
+.olvidaste-btn {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+.modal-content {
+  border-radius: 20px !important;
+}
 
 
 
@@ -170,9 +267,9 @@ body {
 }
 
 .cellphone-register-buttom {
-  background-color: #1a8cd8;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   font-size: 1rem;
+  background-color: #1a8cd8;
   font-weight: 600;
   color: white;
   vertical-align: center;
