@@ -1,10 +1,62 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: 0;
+}
+
+.contenedor {
+  height: 100vh;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.div-image {  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../public/img/login_left.png");
+}
+
+.login-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -12,22 +64,21 @@ body {
   background-color: #050505;
 }
 
-
 .main {
   display: flex;
-  height: 130%;
+  height: 100%;
 }
 
 .img {
-  width: 70%;
+  width: 80%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .img {
-  background-image: url("../public/img/login_left.png");
-  height: 110%;
+  background-image: url("../img/login_left.png");
+  height: 100%;
 }
 
 .login {
@@ -50,7 +101,7 @@ body {
   display: block;
   color: white;
   margin-left: 2.5rem;
-  margin-bottom: 3rem;
+  
   font-size: 4.3rem;
 }
 
@@ -65,7 +116,6 @@ body {
 }
 
 .div-nav-footer {
-  margin-top: 1rem;
   display: inline-block;
   text-align: center;
 }
@@ -81,7 +131,7 @@ body {
   font-size: 1rem;
   padding: 10px 4.8rem;
   margin-left: 2.5rem;
-  border-radius: 25px;  
+  border-radius: 25px;
   text-decoration: none;
   transition: 0.4s;
 }
@@ -184,5 +234,5 @@ body {
 }
 
 .div-nav-footer {
-  margin-top: 7rem;
-}
+  margin-top: 0px;
+} */
