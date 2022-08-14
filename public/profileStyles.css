@@ -1,7 +1,6 @@
 body {
   color: white;
   background-color: black;
-  /* margin-top: 20px; */
 }
 
 ul {
@@ -21,21 +20,25 @@ a:hover {
   color: white;
 }
 
-.rounde {
+.rounded {
   width: fit-content;
-  padding: 10px 20px;
-  margin: 20px 0 0 0;
+  padding: 5px 15px;
+  margin-right: 10px;
 }
 
-.rounde:hover {
+.rounded:hover {
   color: white;
   background-color: rgb(56, 56, 56);
   border-radius: 200px;
 }
 
+h4 {
+  margin-bottom: 0;
+}
+
 li h4 {
   width: max-content;
-  padding: 2px 20px;
+  padding: 6px 20px;
   margin: 20px 0;
 }
 li h4:hover {
@@ -83,10 +86,13 @@ li h4:hover {
 }
 
 #headProfileImage {
-  width: 8rem;
-  height: 8rem;
+  width: 9rem;
+  height: 9rem;
   border-radius: 100px;
   margin: 10px 0;
+  position: relative;
+  bottom: 90px;
+  border: solid black 4px;
 }
 
 .trends {
@@ -152,4 +158,28 @@ li h4:hover {
 #sidebarTweetBtn {
   padding: 15px 0;
   width: 100%;
+}
+
+#headerPic {
+  width: 100%;
+  /* background-color: #16181c; */
+  background-image: url(/img/tech.jpeg);
+  height: 250px;
+  margin: 0;
+}
+
+#edit-btn {
+  border: solid white 1px;
+  background-color: black;
+  color: white;
+  border-radius: 50px;
+  font-weight: bold;
+  padding: 6px 15px;
+  position: relative;
+  bottom: 140px;
+  left: 500px;
+}
+
+#hh {
+  height: 320px;
 }

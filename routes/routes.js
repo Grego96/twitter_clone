@@ -18,6 +18,7 @@ routes.post("/register", userController.store);
 routes.get("/", isAuthenticated, tweetController.index);
 routes.post("/", isAuthenticated, tweetController.store);
 
+
 routes.post("/like", isAuthenticated,  async (req, res) => {
   // console.log(req.body.like);
   //   const newLike = await new Tweet({
