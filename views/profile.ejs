@@ -81,16 +81,14 @@
           <div class="col-6" id="parallelLines">
             <div class="d-flex profileUser align-items-center">
               <div class="rounded"> <a href="/"> <i class="fa-solid fa-arrow-left"></i> </a></div> 
-              <div >
+              <div class="mb-2">
                 <h4 >  <%= userTweets.firstname + " " + userTweets.lastname  %></h4>
                <h6 class="tt" " > <%= userTweets.tweets.length %>  Tweets</h6>
               </div>
             </div>
-            <div>
+            <div id="hh">
               <div id="headerPic">
-                
               </div>
-
               <div>
                 <img
                  id="headProfileImage"
@@ -98,11 +96,7 @@
                   alt="profile image"
                 />
               </div>
-
               <button class="btn" id="edit-btn"> Edit profile</button>
-
-
-
             </div>
             
                <h4 class="profileUser"><strong>  <%= userTweets.firstname + " " + userTweets.lastname  %></strong></h4>
@@ -128,7 +122,7 @@
             <% for( const tweet of userTweets.tweets) { %>
 
             <div class=" d-flex" style="width: 100%">
-              <div class="px-3">
+              <div class="px-3 " >
                 <img
                   class="profileImage"
                   src="<%= userTweets.profileImage %> "
