@@ -20,23 +20,35 @@ a:visited {
 a:hover {
   color: white;
 }
-li h4,
-li h2 {
+
+.rounde {
+  width: fit-content;
+  padding: 10px 20px;
+  margin: 20px 0 0 0;
+}
+
+.rounde:hover {
+  color: white;
+  background-color: rgb(56, 56, 56);
+  border-radius: 200px;
+}
+
+li h4 {
   width: max-content;
   padding: 2px 20px;
   margin: 20px 0;
 }
-li h4:hover,
-li h2:hover {
+li h4:hover {
   color: white;
   background-color: rgb(56, 56, 56);
   height: fit-content;
   border-radius: 100px;
 }
+
 .profileList {
   margin-top: 10px;
   width: max-content;
-  padding: 15px 20px;
+  padding: 15px 20px 10px;
   color: #424853;
 }
 
@@ -45,11 +57,22 @@ li h2:hover {
   background-color: rgb(56, 56, 56);
   color: #424853;
 }
-#selected {
+
+.underline span {
+  display: inline-block;
   color: white;
-  text-decoration: underline #1a8cd8 4px;
 }
-#profileUser {
+
+.underline span:after {
+  content: "";
+  height: 5px;
+  background: #1a8cd8;
+  border-radius: 5px;
+  display: block;
+  position: relative;
+  bottom: -10px;
+}
+.profileUser {
   margin: 20px 0 0 0;
 }
 
@@ -77,6 +100,11 @@ li h2:hover {
   margin: 0;
 }
 
+#born {
+  color: #424853;
+  font-size: 1rem;
+  margin: 5px 0;
+}
 .loremTT {
   margin: 0;
   font-size: 0.8;
