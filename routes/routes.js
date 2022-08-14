@@ -24,7 +24,9 @@ routes.post("/like", async (req, res) => {
 });
 
 routes.get("/profile/:id", async (req, res) => {
-  const userTweets = await User.findById(req.params.id).populate("tweets");
+  const userTweets = await User.findById(req.params.id)
+    .populate("tweets")
+    .sort([["createdAt", "descending"]]);
 
   console.log(userTweets);
   //   const userTweets = await Tweet.find()
