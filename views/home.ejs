@@ -78,25 +78,48 @@
 
 
           <!-- ---------------- TWEET ZONE START ---------------- -->
-          <div class="col-6" id="parallelLines">
+          <div class="col-6 g-0" id="parallelLines">
             <h2 id="home">Home </h2>
-            <form action="/" method="post">
-              <div class="form-group">
-                 <label for="text"></label>
-                 <textarea
-                    style="background-color: black; color: white; border: none"
-                    class="form-control"
-                    id="text"
-                    name="text"
-                    rows="3"
-                    maxlength="140"
-                    placeholder="What's happening?"
-                ></textarea>
-              </div>
-              <button id="small-tweet-btn" class="btn my-4 tweet-btn" type="submit">
-                Tweet
-              </button>
-            </form>
+
+            <div class="d-flex">
+            <div class="px-3 mt-2">
+              <% if(user.profileImage.includes("http")) {%>
+                <img
+
+                  src="<%=user.profileImage%>"
+                  class="profileImage"
+                  alt="profile image"
+                />
+                <% } else{%>
+                <img
+
+                  src="/img/<%= user.profileImage%>"
+                  class="profileImage"
+                  alt="profile image"
+                />
+                <% } %>
+            </div>
+            <div id="textarea">
+              <form action="/" method="post">
+                <div class="form-group">
+                  <label for="text"></label>
+                  <textarea
+
+                      class="form-control"
+                      id="text"
+                      name="text"
+                      rows="5"
+                      maxlength="140"
+                      placeholder="What's happening?"
+                  ></textarea>
+                </div>
+                <!-- <hr> -->
+                <button id="small-tweet-btn" class="btn my-4 tweet-btn" type="submit">
+                  Tweet
+                </button>
+              </form>
+            </div>
+          </div>
             <hr />
 
             <% for( const tweet of tweets) { %>

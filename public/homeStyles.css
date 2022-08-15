@@ -1,7 +1,6 @@
 body {
   color: white;
   background-color: black;
-  /* margin-top: 20px; */
 }
 
 ul {
@@ -34,6 +33,7 @@ li:hover {
 
 #home {
   margin-top: 20px;
+  padding: 0 16px;
 }
 
 .trends {
@@ -99,7 +99,7 @@ h6 {
 }
 #small-tweet-btn {
   position: relative;
-  left: 550px;
+  left: 465px;
 }
 
 #sidebarTweetBtn {
@@ -111,4 +111,19 @@ h6 {
   width: 4rem;
   height: 4rem;
   border-radius: 50px;
+}
+
+#text {
+  background-color: black !important;
+  color: white !important;
+  border: none !important;
+}
+
+#text:active {
+  outline: none !important;
+  border: 0 none transparent;
+}
+#textarea {
+  width: 100%;
+  margin-right: 15px;
 }
