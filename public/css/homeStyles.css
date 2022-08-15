@@ -86,8 +86,8 @@ h6 {
 }
 
 #parallelLines {
-  border-right: solid rgb(152, 151, 151) 1px;
-  border-left: solid rgb(152, 151, 151) 1px;
+  border-right: solid rgb(152, 151, 151) 0.5px;
+  border-left: solid rgb(152, 151, 151) 0.5px;
 }
 
 .tweet-btn {
