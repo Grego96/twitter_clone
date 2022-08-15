@@ -36,6 +36,17 @@ const userControllers = {
       
     });
   },
+  following: async (req, res) => {
+    const userSeguido = await User.findById(req.params.id)
+    const userSigue = await User.findById(req.user.id)
+    userSeguido.followers.push(userSigue.id)
+    userSigue.followings.push(userSeguido.id)
+    userSeguido.save()
+    userSigue.save()
+    res.redirect("/")
+  }
 };
+
+
 
 module.exports = userControllers;

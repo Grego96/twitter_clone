@@ -201,6 +201,17 @@
               <p class="loremTT">Lorem ipsum dolor sit amet.</p>
               <p class="tt">427K Tweets</p>
               <hr />
+
+              <% for (const randomUser of rondomUsers) { %>
+                
+                <div>
+                  <h6><%= randomUser.username %></h6>
+                  <form action="/user/<%= randomUser.id %>" method="post" >
+                    <button >seguir</button>
+                  </form>
+                </div>
+              
+              <% } %>
               
             </div>
           </div>

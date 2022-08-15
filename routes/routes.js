@@ -14,6 +14,8 @@ routes.post("/login", authController.login);
 routes.get("/register", userController.create);
 routes.post("/register", userController.store);
 
+routes.post("/user/:id", isAuthenticated,  userController.following)
+
 // tweetsRoutes
 routes.get("/", isAuthenticated, tweetController.index);
 routes.post("/", isAuthenticated, tweetController.store);

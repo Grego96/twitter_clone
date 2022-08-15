@@ -1,12 +1,27 @@
 const Tweet = require("../models/Tweet");
 const User = require("../models/User");
+const _ = require("lodash");
 
 const tweetControllers = {
   index: async (req, res) => {
+    const users = await User.find()
+    function filtrarUsers(u) {
+      let exist = false;
+      for (const follow of req.user.followings) {
+        if (u.id === follow.id) {
+          exist = true;
+        }
+      }
+      if (u.id !== req.user.id && !exist) {
+        return u
+      }
+    }
+    let rondomUsers = _.sampleSize(users, _.random(5,7)).filter(filtrarUsers);
+    console.log(rondomUsers);
     const tweets = await Tweet.find()
       .sort([["createdAt", "descending"]])
       .populate("user");
-    res.render("home", { tweets, user: req.user });
+    res.render("home", { tweets, user: req.user, rondomUsers });
   },
 
   store: async (req, res) => {
@@ -37,11 +52,19 @@ const tweetControllers = {
   },
 
   destroy: async (req, res) => {
-    for (const tweet of req.user.tweets) {
-      
+    let existTweet = false;
+    const user = await User.findById(req.user.id).populate("tweets")
+    for (const tweet of user.tweets) {
+      if (tweet.id === req.params.id) {
+        existTweet = true;
+      }
     }
-    await Tweet.findByIdAndRemove(req.params.id);
-    await User.findByIdAndUpdate(req.user.id, { $pull: { tweets: req.params.id } });
+    if (existTweet) {
+      await Tweet.findByIdAndRemove(req.params.id);
+      await User.findByIdAndUpdate(req.user.id, { $pull: { tweets: req.params.id } });
+    } else {
+      console.log("nada pasó");
+    }
     res.redirect(`/profile/${req.user.id}`);
   },
 };
