@@ -33,12 +33,14 @@ const tweetControllers = {
     const userTweets = await User.findById(req.params.id)
       .populate("tweets")
       .sort([["createdAt", "descending"]]);
-    res.render("profile", { userTweets });
+    res.render("profile", { userTweets, user: req.user });
   },
 
   destroy: async (req, res) => {
+    for (const tweet of req.user.tweets) {
+      
+    }
     await Tweet.findByIdAndRemove(req.params.id);
-    // await User.updateOne({ _id: req.user.id }, { $pull: { tweets: req.params.id } });
     await User.findByIdAndUpdate(req.user.id, { $pull: { tweets: req.params.id } });
     res.redirect(`/profile/${req.user.id}`);
   },

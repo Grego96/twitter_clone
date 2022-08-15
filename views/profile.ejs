@@ -23,9 +23,9 @@
             <!-- ---------------------- SIDEBAR --------------------- -->
           <div class="col-3">
             <ul >
-              <li >
+              <li class="rounded" >
                   <a href="/">
-                    <h2 class="rounded"><i class="fa-brands fa-twitter"></i> </h2>
+                    <h2 ><i class="fa-brands fa-twitter"></i> </h2>
                   </a>
               </li>
               <li>
@@ -130,11 +130,13 @@
             <hr class="mt-0"/>
 
             <% for( const tweet of userTweets.tweets) { %>
-            <form action="/delete/<%=tweet.id%>?_method=DELETE" method="post">
-              <button class="user delete" type="submit">
-                <i class="fa-solid fa-xmark"></i>
-              </button>
-            </form>
+              <% if (user.id === userTweets.id) { %>
+                <form action="/delete/<%=tweet.id%>?_method=DELETE" method="post">
+                  <button class="user delete" type="submit">
+                    <i class="fa-solid fa-xmark"></i>
+                  </button>
+                </form>
+              <% } %>
             <div class=" d-flex w-100" >
               <div class="px-3">
                 <% if(userTweets.profileImage.includes("http")) {%>
