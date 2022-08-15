@@ -12,7 +12,7 @@
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
-<link rel="stylesheet" href="/profileStyles.css">
+<link rel="stylesheet" href="/css/profileStyles.css">
   </head>
   <body>
     <section>
@@ -22,56 +22,8 @@
 
             <!-- ---------------------- SIDEBAR --------------------- -->
           <div class="col-3">
-            <ul >
-              <li class="rounded" >
-                  <a href="/">
-                    <h2 ><i class="fa-brands fa-twitter"></i> </h2>
-                  </a>
-              </li>
-              <li>
-                <h4>
-                  <a href="/"></i>Home</a>
-                </h4>
-              </li>
-              <li>
-                <h4>
-                   Explore
-                </h4>
-              </li>
-              <li>
-                <h4>
-                   Notification
-                </h4>
-              </li>
-              <li>
-                <h4>
-                   Messages
-                </h4>
-              </li>
-              <li>
-                <h4>
-                Bookmarks
-                </h4>
-              </li>
-              <li>
-                <h4>
-                  Lists
-                </h4>
-              </li>
-              <li>
-                <h4>
-                   Profile
-                </h4>
-              </li>
-              <li>
-                <h4>
-                  More
-                </h4>
-              </li>
-              <button class="btn tweet-btn" id="sidebarTweetBtn">
-                Tweet
-              </button>
-            </ul>
+            <%- include("partials/leftSidebar") %> 
+           
           </div>
 
           <!-- ------------------SIDEBAR END --------------------- -->
@@ -80,7 +32,7 @@
           <!-- ---------------- TWEET ZONE START ---------------- -->
           <div class="col-6 g-0" id="parallelLines">
             <div class="d-flex profileUser align-items-center">
-              <a  href="/"><div class="rounded">  <i class="fa-solid fa-arrow-left"></i> </div></a> 
+              <a href="/"><div class="backArrow mx-2">  <i class="fa-solid fa-arrow-left"></i> </div></a> 
               <div class="mb-2">
                 <h4 >  <%= userTweets.firstname + " " + userTweets.lastname  %></h4>
                <h6 class="tt" " > <%= userTweets.tweets.length %>  Tweets</h6>
@@ -105,25 +57,25 @@
                   />
                   <% } %>
               </div>
-              <button class="btn" id="edit-btn"> Edit profile</button>
+              <button class="btn" id="edit-btn"> Editar perfil</button>
             </div>
             <div id="userInfo">
                <h4 class="profileUser"><strong>  <%= userTweets.firstname + " " + userTweets.lastname  %></strong></h4>
                <h6 class="tt"> @<%=  userTweets.username%> </h6>
                <p class="my-4"><%= userTweets.description %> </p>
-               <h6 id="born"> Born August 01, 1962 | Joined September 1998</h6>
+               <h6 id="born"> Fecha de nacimiento: 01 de agosto de 1962 | Se unió en septiembrede 1998</h6>
                 <h6><%= userTweets.followings.length%> 
-                  <text class="tt"> Following</text>  
+                  <text class="tt"> Siguiendo</text>  
                   <%= userTweets.followers.length%> 
-                  <text class="tt"> Followers</text>
+                  <text class="tt"> Seguidores</text>
                 </h6> 
               </div>
             <div>
                 <ul class="d-flex justify-content-around p-0 m-0" >
                     <li class="profileList underline" ><span> Tweets</span></li>
-                    <li  class="profileList">Tweets & replies</li>
-                    <li  class="profileList">Media</li>
-                    <li  class="profileList">Likes</li>
+                    <li  class="profileList">Tweets y respuestas</li>
+                    <li  class="profileList">Fotos y videos</li>
+                    <li  class="profileList">Me gusta</li>
                 </ul>
             </div>
                 
@@ -161,17 +113,17 @@
                   </span>
                   <p><%= tweet.text %></p>
                 </div>
-                <div class="d-flex justify-content-around align-items-center" >
-                    <i class="fa-regular fa-comment"></i>
-                    <i class="fa-solid fa-retweet"></i>
-                    <form action="/like" method="post">
-                        <button id="like" type="submit" ">
-                            <i class="fa-regular fa-heart"></i>
-                        </button>
-                    </form>
-                    <i class="fa-solid fa-arrow-up-from-bracket"></i>
-                </div>
               </div>
+            </div>
+            <div class="d-flex justify-content-evenly align-items-center" >
+                <i class="fa-regular fa-comment"></i>
+                <i class="fa-solid fa-retweet"></i>
+                <form action="/like" method="post">
+                    <button id="like" type="submit" ">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                </form>
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>
             </div>
             <hr />
             <% } %>
@@ -182,37 +134,8 @@
 
  <!-------------- TRENDING BAR ------------>
           <div class="col-3">
-            <input
-              id="search"
-              disabled
-              type="text"
-              placeholder="Search Twitter"
-            />
-            <div class="trends card ">
-              <h2>Trends for you</h2>
-              <hr />
-              <p class="tt">Trending in Uruguay</p>
-              <p class="loremTT">Lorem ipsum dolor sit amet.</p>
-              <p class="tt">427K Tweets</p>
-              <hr />
-              <p class="tt">Trending in Uruguay</p>
-              <p class="loremTT">Lorem ipsum dolor sit amet.</p>
-              <p class="tt">427K Tweets</p>
-              <hr />
-              <p class="tt">Trending in Uruguay</p>
-              <p class="loremTT">Lorem ipsum dolor sit amet.</p>
-              <p class="tt">427K Tweets</p>
-              <hr />
-              <p class="tt">Trending in Uruguay</p>
-              <p class="loremTT">Lorem ipsum dolor sit amet.</p>
-              <p class="tt">427K Tweets</p>
-              <hr />
-              <p class="tt">Trending in Uruguay</p>
-              <p class="loremTT">Lorem ipsum dolor sit amet.</p>
-              <p class="tt">427K Tweets</p>
-              <hr />
-              
-            </div>
+            <%- include("partials/trendSidebar") %> 
+
           </div>
 <!-- ------- TRENDING BAR END -------- -->
 

@@ -6,6 +6,10 @@ body {
 ul {
   list-style: none;
 }
+
+li {
+  cursor: pointer;
+}
 a {
   color: white;
 }
@@ -19,17 +23,16 @@ a:visited {
 a:hover {
   color: white;
 }
-
-.rounded {
-  width: fit-content;
-  padding: 5px 15px;
-  margin: 10px;
+li h5 {
+  width: max-content;
+  padding: 10px 20px;
+  margin: 20px 0;
 }
-
-.rounded:hover {
+li h5:hover {
   color: white;
-  background-color: rgb(56, 56, 56);
-  border-radius: 200px;
+  background-color: #181818;
+  height: fit-content;
+  border-radius: 100px;
 }
 
 h4 {
@@ -76,7 +79,7 @@ li h4:hover {
   bottom: -10px;
 }
 .profileUser {
-  margin: 20px 0 0 0;
+  padding: 20px 0 0;
 }
 
 .profileImage {
@@ -85,11 +88,19 @@ li h4:hover {
   border-radius: 50px;
 }
 
+.backArrow {
+  padding: 10px 15px;
+}
+.backArrow:hover {
+  background-color: #424853;
+  border-radius: 100px;
+}
+
 #headProfileImage {
   width: 9rem;
   height: 9rem;
   border-radius: 100px;
-  margin: 10px 0;
+  margin: 10px;
   position: relative;
   bottom: 90px;
   border: solid black 4px;
@@ -195,4 +206,14 @@ li h4:hover {
 
 #userInfo {
   margin: 0 10px;
+}
+.sidebar {
+  position: fixed;
+  height: 100vh;
+}
+
+#logout {
+  background-color: black;
+  color: #424853;
+  border: none;
 }
