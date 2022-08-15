@@ -8,11 +8,11 @@ const userController = require("../controllers/userController");
 const tweetController = require("../controllers/tweetController");
 
 // userRoutes.
-routes.get("/login", userController.login);
-routes.post("/login", authController.login);
-
 routes.get("/register", userController.create);
 routes.post("/register", userController.store);
+routes.get("/login", userController.login);
+routes.post("/login", authController.login);
+routes.post("/logout", authController.logOutUser);
 
 routes.post("/user/:id", isAuthenticated,  userController.following)
 

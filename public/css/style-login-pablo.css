@@ -5,8 +5,13 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-.contenedor {
+body {
   height: 100vh;
+}
+
+.contenedor {
+   height: 100vh; 
+ 
   display: flex;
   flex-direction: column;
   background-color: black;
@@ -16,11 +21,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url("./img/login_left.png");
+  background-image: url("../img/login_left.png");
+  height: 100%;
 }
 
 .left-bird {
-  width: 60%;
+  width: 38.5%;
 }
 
 .right-bird {
@@ -29,13 +35,13 @@
 }
 
 .maint-title {
-  margin-left: 1.5rem;
+  
   color: white;
+  font-size: 1.2rem;
 }
 
 .subtitle {
-  color: white;
-  margin-left: 1.8rem;
+  color: white;  
   font-size: 1.8rem;
 }
 
@@ -55,7 +61,7 @@
 }
 
 .login-info h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bolder;
   font-family: TwitterChirpExtendedHeavy, Verdana, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif;
@@ -63,19 +69,21 @@
 
 .login-info h3 {
   font-weight: bolder;
-  margin-top: 35px;
+  margin-top: 10px;
+  font-size: 2.2rem;
 }
 
 .register_buttons {
-  margin-top: 15px;
-  padding: 1.5rem 2rem;
+  margin-top: 8px;
+  padding: 1.5rem 0;
   font-weight: 800;
+  width: 350px; 
 }
 
 .register_google {
   font-weight: 600;
   color: #3c3f42;
-  min-width: 15rem;
+ width: 100%;
 }
 
 
@@ -96,29 +104,32 @@
 .register_apple {
   color: #0f1419;
   font-weight: 500;
-  min-width: 15rem;
+  width: 100%;
 }
 
 .new-register {
-  background-color: #1a8cd8;
-  margin-top: 15px;  
+  background-color: #1a8cd8;   
   font-weight: 600;
   color: white;
-  min-width: 15rem;
-  height: 43px;
-  
+  width: 100%;
+  height: 43px;  
 }
 
 .register_buttons .o {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 20px;  
 }
 
 .termins {
   font-size: 0.8rem;
   font-weight: 200;
+}
+
+
+.btn-close {
+  color: white;  
 }
 
 .div-modal-o {
@@ -134,9 +145,23 @@
 }
 
 .line {
-  display: inline-block;  
-  min-width: 9rem;
-  color: #4c4c4d;
+  /* display: inline-block;   */
+  width: 9rem;
+  color: #bebebe;
+  margin-bottom: 15px;
+}
+
+.o {
+  line-height: normal;
+  margin: 0;
+}
+
+.container-o {
+display: flex;
+justify-content: center;
+color: rgb(157, 157, 157);
+font-weight: bolder;
+width: 100%;
 }
 
 .have-account {
@@ -148,14 +173,20 @@ margin-left: 1.8rem;
   color: white;
   border: .1px solid white;
   margin-top: 15px;
-  margin-left: 1.9rem;
+  margin-left: 1.9rem; 
   width: 320px;
   height: 40px;
   background-color: black;
 }
 
 .modal-bird {
-  width: 10%;
+  width: 7%;
+  padding-top: 1rem;
+}
+
+.modal2-bird {
+  width: 11%;
+  padding-top: 1rem;
 }
 
 .botones_modal {
@@ -275,10 +306,50 @@ border:0.5px solid #1a8cd8;
 }
 
 
+
 .nav-footer {
   height: 100%;
   background-color: black;
 }
+
+.input-modal-2 {
+  
+  max-width: 300px;
+}
+
+.elements-modal2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 300px;
+}
+
+.items-footer {
+ margin: 5px;
+  font-size: .9rem;
+}
+
+.nav-footer {
+  padding: 10px 5px 30px;
+  text-align: center;
+ height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* 

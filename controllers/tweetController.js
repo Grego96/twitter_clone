@@ -45,10 +45,24 @@ const tweetControllers = {
   },
 
   profiles: async (req, res) => {
+    const users = await User.find()
+    function filtrarUsers(u) {
+      let exist = false;
+      for (const follow of req.user.followings) {
+        if (u.id === follow.id) {
+          exist = true;
+        }
+      }
+      if (u.id !== req.user.id && !exist) {
+        return u
+      }
+    }
+    let rondomUsers = _.sampleSize(users, _.random(5,7)).filter(filtrarUsers);
+    console.log(rondomUsers);
     const userTweets = await User.findById(req.params.id)
       .populate("tweets")
       .sort([["createdAt", "descending"]]);
-    res.render("profile", { userTweets, user: req.user });
+    res.render("profile", { userTweets, user: req.user, rondomUsers });
   },
 
   destroy: async (req, res) => {
