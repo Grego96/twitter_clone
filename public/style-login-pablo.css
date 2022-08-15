@@ -10,8 +10,8 @@ body {
 }
 
 .contenedor {
-  /* height: 100vh; */
-  height: 100%;
+   height: 100vh; 
+ 
   display: flex;
   flex-direction: column;
   background-color: black;
@@ -35,13 +35,13 @@ body {
 }
 
 .maint-title {
-  margin-left: 1.5rem;
+  
   color: white;
+  font-size: 1.2rem;
 }
 
 .subtitle {
-  color: white;
-  margin-left: 1.8rem;
+  color: white;  
   font-size: 1.8rem;
 }
 
@@ -61,7 +61,7 @@ body {
 }
 
 .login-info h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bolder;
   font-family: TwitterChirpExtendedHeavy, Verdana, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif;
@@ -69,15 +69,15 @@ body {
 
 .login-info h3 {
   font-weight: bolder;
-  margin-top: 35px;
+  margin-top: 10px;
+  font-size: 2.2rem;
 }
 
 .register_buttons {
-  margin-top: 15px;
-  padding: 1.5rem 2rem;
+  margin-top: 8px;
+  padding: 1.5rem 0;
   font-weight: 800;
-  width: 400px;
-  /* min-width: 60%; */
+  width: 350px; 
 }
 
 .register_google {
@@ -304,6 +304,7 @@ border:0.5px solid #1a8cd8;
   position: relative;
   bottom: 2px;  
 }
+
 
 
 .nav-footer {
