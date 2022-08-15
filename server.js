@@ -8,15 +8,16 @@ const mongoose = require("mongoose");
 const Tweet = require("./models/Tweet");
 const passport = require("passport");
 const session = require("express-session");
+const methodOverride = require("method-override");
 
 require("./config/mongoConfig"); // mongoose connect <-----
-require("./config/passportConfig")
+require("./config/passportConfig");
 
 app.use(session({ secret: "AlgúnTextoSuperSecreto", resave: false, saveUninitialized: false }));
 app.use(passport.session());
-
 app.use(express.static(__dirname + "/public"));
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride("_method"));
 
 app.use(function (req, res, next) {
   res.locals.user = req.user;

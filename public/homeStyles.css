@@ -53,10 +53,17 @@ li:hover {
   font-weight: bold;
 }
 
+h6 {
+  display: inline-block;
+  margin-right: 5px;
+}
 .user {
-  color: white;
+  color: #424853;
+  font-size: 0.8rem;
   text-decoration: none;
-  font-weight: bolder;
+}
+.user:hover {
+  color: #424853;
 }
 
 #like {
@@ -90,8 +97,18 @@ li:hover {
   background-color: #1681c8;
   border: #1681c8 solid 1px;
 }
+#small-tweet-btn {
+  position: relative;
+  left: 550px;
+}
 
 #sidebarTweetBtn {
   padding: 15px 0;
   width: 100%;
+}
+
+.profileImage {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50px;
 }

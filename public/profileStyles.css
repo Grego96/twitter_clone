@@ -118,11 +118,20 @@ li h4:hover {
 }
 
 .user {
-  color: white;
+  color: #424853;
+  font-size: 0.8rem;
   text-decoration: none;
-  font-weight: bolder;
 }
-
+.user:hover {
+  color: #424853;
+}
+.delete {
+  background-color: black;
+  color: #424853;
+  border: none;
+  position: relative;
+  left: 600px;
+}
 #like {
   background-color: black;
   border: none;
@@ -182,4 +191,8 @@ li h4:hover {
 
 #hh {
   height: 320px;
+}
+
+#userInfo {
+  margin: 0 10px;
 }

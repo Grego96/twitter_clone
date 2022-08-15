@@ -79,7 +79,7 @@
 
           <!-- ---------------- TWEET ZONE START ---------------- -->
           <div class="col-6" id="parallelLines">
-            <h2 id="home">Home de <%= user.username %> </h2>
+            <h2 id="home">Home </h2>
             <form action="/" method="post">
               <div class="form-group">
                  <label for="text"></label>
@@ -93,7 +93,7 @@
                     placeholder="What's happening?"
                 ></textarea>
               </div>
-              <button class="btn my-4 tweet-btn" type="submit">
+              <button id="small-tweet-btn" class="btn my-4 tweet-btn" type="submit">
                 Tweet
               </button>
             </form>
@@ -105,25 +105,27 @@
               <div class="px-3">
                 <% if(tweet.user.profileImage.includes("http")) {%>
                   <img
-                  style="width: 4rem; height: 4rem; border-radius: 50px"
+
                     src="<%=tweet.user.profileImage%>"
-                    class="card-img-top img-fluid img-fixed-size img-main"
+                    class="profileImage"
                     alt="profile image"
                   />
                   <% } else{%>
                   <img
-                  style="width: 4rem; height: 4rem; border-radius: 50px"
+
                     src="/img/<%= tweet.user.profileImage%>"
-                    class="card-img-top img-fluid img-fixed-size img-main"
+                    class="profileImage"
                     alt="profile image"
                   />
                   <% } %>
               </div>
               <div class="px-3" style="width: 100%">
                 <div>
+                  <h6><strong>   <a   href="/profile/<%= tweet.user.id %> ">   <%= tweet.user.firstname + " " + tweet.user.lastname  %> </a></strong></h6>
                 <a class="user"  href="/profile/<%= tweet.user.id %> ">
-                  <%= tweet.user.username %>
+                  @<%= tweet.user.username %>
                 </a>
+                
                 <p><%= tweet.text %></p>
                 </div>
                 <div class="d-flex justify-content-around align-items-center" >

@@ -1,5 +1,5 @@
 const Tweet = require("../models/Tweet");
-const User = require("../models/User")
+const User = require("../models/User");
 
 const tweetControllers = {
   index: async (req, res) => {
@@ -14,9 +14,10 @@ const tweetControllers = {
       text: req.body.text,
       user: req.user,
     });
-    console.log("new tweet -----> ", newTweet);
-    const user = await User.findById(req.user.id)
-    user.tweets.push(newTweet.id)
+
+    const user = await User.findById(req.user.id);
+    user.tweets.push(newTweet.id);
+
     newTweet.save((error) => {
       if (error) return console.log(error);
       console.log("Se creó un nuevo tweet en la DB");
@@ -26,6 +27,20 @@ const tweetControllers = {
       console.log("se actualizo los tweets");
     });
     res.redirect("/");
+  },
+
+  profiles: async (req, res) => {
+    const userTweets = await User.findById(req.params.id)
+      .populate("tweets")
+      .sort([["createdAt", "descending"]]);
+    res.render("profile", { userTweets });
+  },
+
+  destroy: async (req, res) => {
+    await Tweet.findByIdAndRemove(req.params.id);
+    // await User.updateOne({ _id: req.user.id }, { $pull: { tweets: req.params.id } });
+    await User.findByIdAndUpdate(req.user.id, { $pull: { tweets: req.params.id } });
+    res.redirect(`/profile/${req.user.id}`);
   },
 };
 
