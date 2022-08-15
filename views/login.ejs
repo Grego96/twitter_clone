@@ -15,7 +15,6 @@
     <title>Document</title>
   </head>
   <body>
-
     <style>
       .loading {
           position: fixed;
@@ -89,7 +88,7 @@
         <div class="login-info h-100">
           <h1 class="maint-title">Lo que está <br> pasando ahora</h1>
           <h3 class="subtitle">Únete a Twitter hoy mismo.</h3>
-          <div class="col-md-6 register_buttons">
+          <div class="register_buttons">
             <button class="register register_google"><span class="google-icon"><svg xmlns="http://www.w3.org/2000/svg" x="00px" y="0px"
               width="18" height="18"
               viewBox="0 0 48 48"
@@ -98,12 +97,10 @@
               width="24" height="24"
               viewBox="0 0 24 24"
               style=" fill:#000000;">  <path d="M 16.125 1 C 14.972 1.067 13.648328 1.7093438 12.861328 2.5273438 C 12.150328 3.2713438 11.589359 4.3763125 11.818359 5.4453125 C 13.071359 5.4783125 14.329031 4.8193281 15.082031 3.9863281 C 15.785031 3.2073281 16.318 2.12 16.125 1 z M 16.193359 5.4433594 C 14.384359 5.4433594 13.628 6.5546875 12.375 6.5546875 C 11.086 6.5546875 9.9076562 5.5136719 8.3476562 5.5136719 C 6.2256562 5.5146719 3 7.4803281 3 12.111328 C 3 16.324328 6.8176563 21 8.9726562 21 C 10.281656 21.013 10.599 20.176969 12.375 20.167969 C 14.153 20.154969 14.536656 21.011 15.847656 21 C 17.323656 20.989 18.476359 19.367031 19.318359 18.082031 C 19.922359 17.162031 20.170672 16.692344 20.638672 15.652344 C 17.165672 14.772344 16.474672 9.1716719 20.638672 8.0136719 C 19.852672 6.6726719 17.558359 5.4433594 16.193359 5.4433594 z"></path></svg></span>Registrarse con Apple</button>
-            <div >
-              <span class="div-modal-o">
-                <hr class="line" />
-                <sup class="o-modal">o</sup>
-                <hr class="line"
-              /></span>
+            <div class="container-o">              
+                <hr class="line"/>
+                <p class="o">o</p>
+                <hr class="line"/>
             </div>
             <button class="register new-register" data-bs-toggle="modal" data-bs-target="#exampleModal3">Registrate con el número de ...</button>
             <p class="termins">Al registrarte, aceptas los <a href="#">Términos de servicio</a>y la <a href="#">Política de privacidad</a>, incluida la política de <a href="#">Uso de Cookies</a>.</p>
@@ -169,8 +166,7 @@
                                                 <!-- MODAL 2 -->
       <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered h-100">
-          <div class="modal-content bg-negro"> 
-            
+          <div class="modal-content bg-negro">             
             <div class="modal2-bird">
               <svg class="left-bird" viewBox="0 0 24 24" aria-hidden="true" fill="white"
                 class="r-jwli3a r-4qtqp9 r-yyyyoo r-rxcuwo r-1777fci r-m327ed r-dnmrzs r-494qqr r-bnwqim r-1plcrui r-lrvibr">
@@ -181,13 +177,9 @@
                 </g>
               </svg>
             </div>
-
             <button type="button" class="btn-close p-3" data-bs-dismiss="modal" aria-label="Close"></button>
             <div class="contenido-modal h-100 d-flex flex-column justify-content-between">
-              <div class="elements-modal2 h-100">
-
-                
-
+              <div class="elements-modal2 h-100">   
                 <div class="div-modal-title">
                   <h4 class="modal-title">Inicia sesión en Twitter</h4>
               </div>
@@ -226,7 +218,9 @@
       <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered h-100">
           <div class="modal-content bg-negro">
-            <button type="button" class="btn-close p-3" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div>
+            <button type="button" class="btn-close p-3" style="color: white;" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
             <div class="contenido-modal h-100 d-flex flex-column justify-content-between">
               <h1>Cree su cuenta</h1>
               <div class="row p-5">
@@ -234,7 +228,7 @@
             <form action="/register" enctype="multipart/form-data" method="post">
               <div class="mb-3">
                 <label for="firstname" class="form-label">Nombre</label>
-                <input
+                <input style="background-color: black; color:white;"
                   type="text"
                   class="form-control"
                   name="firstname"
@@ -244,18 +238,17 @@
               </div>
               <div class="mb-3">
                 <label for="lastname" class="form-label">Apellido</label>
-                <input
+                <input style="background-color: black; color:white;"
                   type="text"
                   class="form-control"
                   name="lastname"
                   id="lastname"
                   placeholder="Ingrese su apellido..."
                 />
-              </div>
-  
+              </div>  
               <div class="mb-3">
                 <label for="email" class="form-label">Correo elecrónico</label>
-                <input
+                <input style="background-color: black; color:white;"
                   type="email"
                   class="form-control"
                   id="email"
@@ -265,7 +258,7 @@
               </div>
               <div class="mb-3">
                 <label for="username" class="form-label">Usuario</label>
-                <input
+                <input style="background-color: black; color:white;"
                   type="text"
                   class="form-control"
                   name="username"
@@ -275,7 +268,7 @@
               </div>
               <div class="mb-3">
                 <label for="password" class="form-label">Contraseña</label>
-                <input
+                <input style="background-color: black; color:white;"
                   type="password"
                   class="form-control"
                   name="password"
@@ -285,14 +278,13 @@
               </div>
               <div class="mb-3">
                 <label for="profileImage" class="form-label">Imagen de perfil</label>
-                <input
+                <input style="background-color: black; color:white;"
                   class="form-control"
                   type="file"
                   id="profileImage"
                   name="profileImage"
                 />
-              </div>
-  
+              </div>  
               <button type="submit" class="btn" style="background-color: #1a8cd8; color: white">
                 Registrarse
               </button>
@@ -302,6 +294,192 @@
         </div>
         </div>
       </div>
+
+      <footer>
+        <nav class="nav-footer">          
+          <a
+            class="items-footer"
+            href="https://about.twitter.com"
+            target="_blank"
+            role="link"
+            style="color: rgb(113, 118, 123)"
+            ><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0"
+              >Información</span
+            ></a
+          ><a
+            class="items-footer"
+            href="https://help.twitter.com"
+            dir="auto"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            role="link"
+            style="color: rgb(113, 118, 123)"
+            ><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0"
+              >Centro de Ayuda</span
+            ></a
+          ><a
+            class="items-footer"
+            href="https://twitter.com/tos"
+            dir="auto"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            role="link"
+            style="color: rgb(113, 118, 123)"
+            ><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0"
+              >Condiciones de Servicio</span
+            ></a
+          ><a
+            class="items-footer"
+            href="https://twitter.com/privacy"
+            dir="auto"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            role="link"
+            style="color: rgb(113, 118, 123)"
+            ><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0"
+              >Política de Privacidad</span
+            ></a
+          ><a
+            class="items-footer"
+            href="https://support.twitter.com/articles/20170514"
+            dir="auto"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            role="link"
+            style="color: rgb(113, 118, 123)"
+            ><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0"
+              >Política de cookies</span
+            ></a
+          ><a
+            class="items-footer"
+            href="https://help.twitter.com/resources/accessibility"
+            dir="auto"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            role="link"
+            style="color: rgb(113, 118, 123)"
+            ><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0"
+              >Accesibilidad</span
+            ></a
+          ><a
+            class="items-footer"
+            href="https://business.twitter.com/en/help/troubleshooting/how-twitter-ads-work.html?ref=web-twc-ao-gbl-adsinfo&amp;utm_source=twc&amp;utm_medium=web&amp;utm_campaign=ao&amp;utm_content=adsinfo"
+            dir="auto"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            role="link"
+            style="color: rgb(113, 118, 123)"
+            ><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0"
+              >Información de anuncios</span
+            ></a
+          ><a
+            class="items-footer"
+            href="https://blog.twitter.com"
+            dir="auto"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            role="link"
+            style="color: rgb(113, 118, 123)"
+            ><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Blog</span></a
+          ><a
+            class="items-footer"
+            href="https://status.twitterstat.us"
+            dir="auto"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            role="link"
+            style="color: rgb(113, 118, 123)"
+            ><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Estado</span></a
+          ><a
+            class="items-footer"
+            href="https://careers.twitter.com"
+            dir="auto"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            role="link"
+            style="color: rgb(113, 118, 123)"
+            ><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Empleos</span></a
+          ><a
+            class="items-footer"
+            href="https://about.twitter.com/press/brand-assets"
+            dir="auto"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            role="link"
+            style="color: rgb(113, 118, 123)"
+            ><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0"
+              >Recursos para marcas</span
+            ></a
+          ><a
+            class="items-footer"
+            href="https://ads.twitter.com/?ref=gl-tw-tw-twitter-advertise"
+            dir="auto"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            role="link"
+            style="color: rgb(113, 118, 123)"
+            ><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0"
+              >Publicidad</span
+            ></a
+          ><a
+            class="items-footer"
+            href="https://marketing.twitter.com"
+            dir="auto"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            role="link"
+            style="color: rgb(113, 118, 123)"
+            ><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0"
+              >Marketing</span
+            ></a
+          ><a
+            class="items-footer"
+            href="https://business.twitter.com/?ref=web-twc-ao-gbl-twitterforbusiness&amp;utm_source=twc&amp;utm_medium=web&amp;utm_campaign=ao&amp;utm_content=twitterforbusiness"
+            dir="auto"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            role="link"
+            style="color: rgb(113, 118, 123)"
+            ><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0"
+              >Twitter para empresas</span
+            ></a
+          ><a
+            class="items-footer"
+            href="https://developer.twitter.com"
+            dir="auto"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            role="link"
+            style="color: rgb(113, 118, 123)"
+            ><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0"
+              >Desarrolladores</span
+            ></a
+          ><a
+            class="items-footer"
+            href="https://twitter.com/i/directory/profiles"
+            dir="auto"
+            rel="noopener noreferrer nofollow"
+            target="_blank"
+            role="link"
+            style="color: rgb(113, 118, 123)"
+            ><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0">Guía</span></a
+          ><a
+            class="items-footer"
+            href="/settings"
+            dir="auto"
+            role="link"
+            style="color: rgb(113, 118, 123)"
+            ><span class="css-901oao css-16my406 r-poiln3 r-bcqeeo r-qvutc0"
+              >Configuración</span
+            ></a
+          ><a href="" style="text-decoration: none;">
+            <span style="color: rgb(113, 118, 123)";
+              >© 2022 Twitter, Inc.</span
+            >
+          </a>                                
+          </div>
+        </nav>
+      </footer>
     </div> 
        
     <script src="./js/index.js"></script>

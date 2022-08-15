@@ -5,8 +5,13 @@
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
-.contenedor {
+body {
   height: 100vh;
+}
+
+.contenedor {
+  /* height: 100vh; */
+  height: 100%;
   display: flex;
   flex-direction: column;
   background-color: black;
@@ -17,10 +22,11 @@
   justify-content: center;
   align-items: center;
   background-image: url("./img/login_left.png");
+  height: 100%;
 }
 
 .left-bird {
-  width: 60%;
+  width: 38.5%;
 }
 
 .right-bird {
@@ -70,12 +76,14 @@
   margin-top: 15px;
   padding: 1.5rem 2rem;
   font-weight: 800;
+  width: 400px;
+  /* min-width: 60%; */
 }
 
 .register_google {
   font-weight: 600;
   color: #3c3f42;
-  min-width: 15rem;
+ width: 100%;
 }
 
 
@@ -96,24 +104,22 @@
 .register_apple {
   color: #0f1419;
   font-weight: 500;
-  min-width: 15rem;
+  width: 100%;
 }
 
 .new-register {
-  background-color: #1a8cd8;
-  margin-top: 15px;  
+  background-color: #1a8cd8;   
   font-weight: 600;
   color: white;
-  min-width: 15rem;
-  height: 43px;
-  
+  width: 100%;
+  height: 43px;  
 }
 
 .register_buttons .o {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 20px;
+  padding: 0 20px;  
 }
 
 .termins {
@@ -123,8 +129,7 @@
 
 
 .btn-close {
-  color: white;
-  z-index: 5;
+  color: white;  
 }
 
 .div-modal-o {
@@ -140,9 +145,23 @@
 }
 
 .line {
-  display: inline-block;  
-  min-width: 9rem;
-  color: #4c4c4d;
+  /* display: inline-block;   */
+  width: 9rem;
+  color: #bebebe;
+  margin-bottom: 15px;
+}
+
+.o {
+  line-height: normal;
+  margin: 0;
+}
+
+.container-o {
+display: flex;
+justify-content: center;
+color: rgb(157, 157, 157);
+font-weight: bolder;
+width: 100%;
 }
 
 .have-account {
@@ -154,7 +173,7 @@ margin-left: 1.8rem;
   color: white;
   border: .1px solid white;
   margin-top: 15px;
-  margin-left: 1.9rem;
+  margin-left: 1.9rem; 
   width: 320px;
   height: 40px;
   background-color: black;
@@ -292,8 +311,6 @@ border:0.5px solid #1a8cd8;
   background-color: black;
 }
 
-
-
 .input-modal-2 {
   
   max-width: 300px;
@@ -306,6 +323,33 @@ border:0.5px solid #1a8cd8;
   justify-content: center;
   max-width: 300px;
 }
+
+.items-footer {
+ margin: 5px;
+  font-size: .9rem;
+}
+
+.nav-footer {
+  padding: 10px 5px 30px;
+  text-align: center;
+ height: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* 
 
