@@ -121,6 +121,12 @@
   font-weight: 200;
 }
 
+
+.btn-close {
+  color: white;
+  z-index: 5;
+}
+
 .div-modal-o {
   display: block;
   padding-left: .5rem;
@@ -155,7 +161,13 @@ margin-left: 1.8rem;
 }
 
 .modal-bird {
-  width: 10%;
+  width: 7%;
+  padding-top: 1rem;
+}
+
+.modal2-bird {
+  width: 11%;
+  padding-top: 1rem;
 }
 
 .botones_modal {
@@ -280,6 +292,20 @@ border:0.5px solid #1a8cd8;
   background-color: black;
 }
 
+
+
+.input-modal-2 {
+  
+  max-width: 300px;
+}
+
+.elements-modal2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 300px;
+}
 
 /* 
 
