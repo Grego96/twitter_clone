@@ -4,7 +4,7 @@ const _ = require("lodash");
 
 const tweetControllers = {
   index: async (req, res) => {
-    const users = await User.find()
+    const users = await User.find();
     function filtrarUsers(u) {
       let exist = false;
       for (const follow of req.user.followings) {
@@ -13,11 +13,11 @@ const tweetControllers = {
         }
       }
       if (u.id !== req.user.id && !exist) {
-        return u
+        return u;
       }
     }
-    let rondomUsers = _.sampleSize(users, _.random(5,7)).filter(filtrarUsers);
-    console.log(rondomUsers);
+    let rondomUsers = _.sampleSize(users, _.random(5, 7)).filter(filtrarUsers);
+
     const tweets = await Tweet.find()
       .sort([["createdAt", "descending"]])
       .populate("user");
@@ -45,7 +45,7 @@ const tweetControllers = {
   },
 
   profiles: async (req, res) => {
-    const users = await User.find()
+    const users = await User.find();
     function filtrarUsers(u) {
       let exist = false;
       for (const follow of req.user.followings) {
@@ -54,11 +54,11 @@ const tweetControllers = {
         }
       }
       if (u.id !== req.user.id && !exist) {
-        return u
+        return u;
       }
     }
-    let rondomUsers = _.sampleSize(users, _.random(5,7)).filter(filtrarUsers);
-    console.log(rondomUsers);
+    let rondomUsers = _.sampleSize(users, _.random(5, 7)).filter(filtrarUsers);
+
     const userTweets = await User.findById(req.params.id)
       .populate("tweets")
       .sort([["createdAt", "descending"]]);
@@ -67,7 +67,7 @@ const tweetControllers = {
 
   destroy: async (req, res) => {
     let existTweet = false;
-    const user = await User.findById(req.user.id).populate("tweets")
+    const user = await User.findById(req.user.id).populate("tweets");
     for (const tweet of user.tweets) {
       if (tweet.id === req.params.id) {
         existTweet = true;
