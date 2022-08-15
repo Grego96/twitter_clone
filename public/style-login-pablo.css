@@ -2,12 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 .contenedor {
   height: 100vh;
   display: flex;
   flex-direction: column;
+  background-color: black;
 }
 
 .div-image {
@@ -17,30 +19,65 @@
   background-image: url("./img/login_left.png");
 }
 
+.left-bird {
+  width: 60%;
+}
+
+.right-bird {
+  margin-top: 2rem;
+  width: 6%;
+}
+
+.maint-title {
+  margin-left: 1.5rem;
+  color: white;
+}
+
+.subtitle {
+  color: white;
+  margin-left: 1.8rem;
+  font-size: 1.8rem;
+}
+
+.google-icon {
+  position: relative;
+  right: 3px;
+  top: -1.5px;
+}
+
+
 .login-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
   min-width: 55%;
-  padding: 20px;
+  
 }
 
 .login-info h1 {
   font-size: 4rem;
-  font-weight:bolder;
+  font-weight: bolder;
   font-family: TwitterChirpExtendedHeavy, Verdana, -apple-system, BlinkMacSystemFont, "Segoe UI",
     Roboto, Helvetica, Arial, sans-serif;
 }
 
 .login-info h3 {
- font-weight: bolder; 
- margin-top: 35px;
+  font-weight: bolder;
+  margin-top: 35px;
 }
 
 .register_buttons {
   margin-top: 15px;
-  max-width: 45%;
+  padding: 1.5rem 2rem;
+  font-weight: 800;
 }
+
+.register_google {
+  font-weight: 600;
+  color: #3c3f42;
+  min-width: 15rem;
+}
+
 
 .register {
   width: 100%;
@@ -55,54 +92,74 @@
   transition: 0.4s;
 }
 
-.register_google {
-  color: #3c3f42;
-}
+
 .register_apple {
   color: #0f1419;
-  font-weight: 600;
+  font-weight: 500;
+  min-width: 15rem;
 }
-.register_num {
+
+.new-register {
   background-color: #1a8cd8;
+  margin-top: 15px;  
   font-weight: 600;
   color: white;
+  min-width: 15rem;
+  height: 43px;
+  
 }
 
 .register_buttons .o {
- display: flex;
- align-items: center;
- justify-content: space-between;
- padding: 0 20px;
-}
-
-.terminos {
-  font-size: 0.8rem;
-}
-
-.o {
   display: flex;
-  justify-content: center;
-}
-
-.iniciar-sesion {
-  margin-top: 60px;
-  width: 45%;
-}
-
-.elements{
-  display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.termins {
+  font-size: 0.8rem;
+  font-weight: 200;
+}
+
+.div-modal-o {
+  display: block;
+  padding-left: .5rem;
   justify-content: center;
 }
 
-.elements h4 {
-  font-weight: bold;
+.o-modal {
+  display: inline-block;
+  font-weight: 100;
+  margin-left: 1rem;
 }
 
+.line {
+  display: inline-block;  
+  min-width: 9rem;
+  color: #4c4c4d;
+}
+
+.have-account {
+color: white;
+margin-left: 1.8rem;
+}
+
+.new-sesion {
+  color: white;
+  border: .1px solid white;
+  margin-top: 15px;
+  margin-left: 1.9rem;
+  width: 320px;
+  height: 40px;
+  background-color: black;
+}
+
+.modal-bird {
+  width: 10%;
+}
 
 .botones_modal {
-  width: 60%;
+  width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -110,10 +167,18 @@
 
 .input-email {
   padding: 14px 5px;
+  
+}
+
+.input-email:placeholder-shown {
+background-color: black;
+color: white;
+min-width: 8rem;
+border:0.5px solid #1a8cd8;
 }
 
 .siguiente {
-  width: 70%;
+  width: 100%;
 }
 
 .siguiente .input-email {
@@ -126,29 +191,94 @@
 
 .siguiente-btn {
   margin-top: 25px;
-  color: white;
-  background-color: black;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
   font-weight: bold;
 }
 
 .olvidaste-btn {
   font-weight: bold;
   font-size: 0.9rem;
+  color: rgb(255, 255, 255);
+  background-color: rgb(0, 0, 0);
+  border: .2px solid white;
 }
 
 .modal-content {
   border-radius: 20px !important;
+  align-items: center;
 }
 
 .bg-negro {
   background-color: black;
   color: white;
+  justify-content: center;
+}
+
+.contenido-modal {
+  width: 600px;
+  align-items: center;
+  justify-content: center;
+}
+
+.div-modal-title {
+  padding-bottom: 2rem;  
+}
+
+.modal-title {
+  font-size: 2rem;
+  text-align: left;
+}
+
+.elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.elements h4 {
+  font-weight: bold;
 }
 
 
+.div-modal-o-2 {
+  display: block;  
+  justify-content: center;
+  
+}
+
+.o-modal-2 {  
+  font-weight: 100; 
+  text-align: center;
+  font-size: 1.5rem;
+  align-items: center;
+  padding-bottom: 10px;
+  padding: 0.3rem;
+  position: relative;
+  bottom: 0.18rem;
+}
+
+.line-modal {
+  display: inline-block;  
+  min-width: 7rem;
+  color: #4c4c4d;
+}
+
+.blur {
+  backdrop-filter: 6px;
+}
+
+.apple-icon {
+  position: relative;
+  bottom: 2px;  
+}
 
 
-
+.nav-footer {
+  height: 100%;
+  background-color: black;
+}
 
 
 /* 
