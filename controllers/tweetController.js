@@ -16,7 +16,6 @@ const tweetControllers = {
     });
     console.log("new tweet -----> ", newTweet);
     const user = await User.findById(req.user.id)
-    // console.log(user);
     user.tweets.push(newTweet.id)
     newTweet.save((error) => {
       if (error) return console.log(error);
